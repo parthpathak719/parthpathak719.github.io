@@ -1,0 +1,43 @@
+export const TAGS = {
+    ASTRO: {
+        name: "Astro",
+        class: "bg-[#7836cf]/20 text-[#bc95ff]",
+        icon: "lucide:rocket",
+    },
+    REACT: {
+        name: "React",
+        class: "bg-[#23272f] text-[#58c4dc]",
+        icon: "lucide:atom",
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-[#003159] text-white",
+        icon: "lucide:wind",
+    },
+    NODE: {
+        name: "Node.js",
+        class: "bg-[#339933]/20 text-[#6cc24a]",
+        icon: "lucide:server",
+    },
+};
+
+export const PROJECTS = [
+    {
+        title: "CryptoViz - Real-time Analytics Dashboard",
+        description:
+            "A high-performance dashboard for tracking cryptocurrency trends. Features live charts, portfolio management, and automated market alerts.",
+        link: "https://cryptoviz-demo.vercel.app/",
+        github: "https://github.com/jhondoe/cryptoviz",
+        image: "/projects/cryptoviz.webp",
+        tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.NODE],
+    },
+    {
+        title: "EcoEarth - Sustainable E-commerce Platform",
+        description:
+            "A modern eco-friendly marketplace focused on sustainable living. Highly optimized for performance and accessibility, featuring a custom CMS for organic product curation.",
+        link: "https://ecoearth-shop.dev",
+        github: "https://github.com/jhondoe/ecoearth",
+        image: "/projects/ecoearth.webp",
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.REACT],
+    },
+];
