@@ -1,18 +1,15 @@
 export const PERSONAL_INFO = {
-    name: "Jhon Doe",
+    name: "Parth Pathak",
     title: "Who stands behind the code?",
-    description: "Hi! I'm Jhon Doe, a Full Stack Developer with a passion for building digital experiences that marry form and function. With over 3 years of experience, I've specialized in creating robust architectures and fluid user interfaces.",
-    journey: "My journey started with a curiosity for how things work under the hood, leading me to master modern technologies like Astro, React, and Node.js.",
-    skills: ["🚀 Fast Learner", "💡 Problem Solver", "🤝 Team Player"],
+    description: "👋. I like building things, breaking them, and then fixing them better. Most of my time goes into college work, experimenting with new ideas, and figuring out how systems actually work behind the scenes. I'm currently exploring web dev, cloud, cybersecurity, and anything that looks interesting enough to dive into. Big fan of “vibe coding” — try something, tweak it, make it work, then make it better.  Outside of coding, it's usually anime, cricket, random tech deep dives, or redesigning something for no reason. Always learning. Always building.",
+    skills: ["🧠 Curious", "🔄 Adaptable", "🎯 Detail-oriented", "🌱 Evolving"],
     heroDescription: "I'm a passionate developer with a strong background in web development and a deep love for creating innovative and user-friendly applications.",
-    resumeUrl: "/",
     socialLinks: [
         {
-            href: "https://www.linkedin.com/",
+            href: "https://www.linkedin.com/in/parth-pathak-584629335/",
             label: "LinkedIn",
         },
-        { href: "https://github.com/", label: "GitHub" },
-        { href: "https://x.com/", label: "Twitter" },
-        { href: "mailto:example@gmail.com", label: "Email" },
+        { href: "https://github.com/parthpathak719", label: "GitHub" },
+        { href: "mailto:parth.pathak1905@gmail.com", label: "Email" },
     ],
 };
