@@ -23,21 +23,28 @@ export const TAGS = {
 
 export const PROJECTS = [
     {
-        title: "CryptoViz - Real-time Analytics Dashboard",
+        title: "🪄 The-Arcane-Universe",
         description:
-            "A high-performance dashboard for tracking cryptocurrency trends. Features live charts, portfolio management, and automated market alerts.",
-        link: "https://cryptoviz-demo.vercel.app/",
-        github: "https://github.com/jhondoe/cryptoviz",
+            "A cinematic, full-stack web experience inspired by the magical world of Harry Potter. The-Arcane-Universe is a dynamic Laravel-based web application featuring interactive archives, character records, magical animations, and AI-enhanced visual elements.",
+        github: "https://github.com/parthpathak719/The-Arcane-Universe",
         image: "/projects/cryptoviz.webp",
         tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.NODE],
     },
     {
-        title: "EcoEarth - Sustainable E-commerce Platform",
+        title: "📘 StudyBot++ — SmartStudy Engine",
         description:
-            "A modern eco-friendly marketplace focused on sustainable living. Highly optimized for performance and accessibility, featuring a custom CMS for organic product curation.",
-        link: "https://ecoearth-shop.dev",
-        github: "https://github.com/jhondoe/ecoearth",
+            "StudyBot++ is an NLP-powered study assistant that combines Generative AI with Spaced Repetition (SM-2) to automate quiz creation, summarization, and review scheduling.",
+        link: "https://studybot-nlp.streamlit.app/",
+        github: "https://github.com/parthpathak719/StudyBot",
         image: "/projects/ecoearth.webp",
         tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.REACT],
+    },
+    {
+        title: "🧊 3D Object Classification using PointNet & PointNet++",
+        description:
+            "This project implements and compares PointNet and PointNet++ architectures for 3D point cloud classification using the ModelNet10 dataset. The goal is to directly process raw point cloud data while handling permutation invariance and capturing both global and local geometric features.",
+        github: "https://github.com/parthpathak719/3D-Object-Classification-On-ModelNet10",
+        image: "/projects/cryptoviz.webp",
+        tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.NODE],
     },
 ];
