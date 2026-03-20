@@ -1,4 +1,4 @@
-# Portfolio Developers Astro
+# Portfolio Website
 
 This is a modern, responsive developer portfolio built with Astro and Tailwind CSS. It features a sleek glassmorphism design and smooth scroll animations.
 
@@ -38,7 +38,3 @@ This project is my contribution to the developer community. Whether you are look
 3. **Start the development server**: `npm run dev`
 4. **Build for production**: `npm run build`
 
----
-<img width="1366" height="3312" alt="Screenshot 2025-12-25 at 01-24-30 Portfolio Developers" src="https://github.com/user-attachments/assets/4016ca5c-fdca-4b00-a01f-02ef74daab63" />
-
-*Happy coding!* 🚀
