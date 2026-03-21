@@ -102,7 +102,7 @@ export const PROJECTS = [
         description:
             "A cinematic, full-stack web experience inspired by the magical world of Harry Potter. The-Arcane-Universe is a dynamic Laravel-based web application featuring interactive archives, character records, magical animations, and AI-enhanced visual elements.",
         github: "https://github.com/parthpathak719/The-Arcane-Universe",
-        image: "/projects/hogwarts.jpg",
+        image: "/Personal-Website/projects/hogwarts.jpg",
         tags: [TAGS.PHP, TAGS.LARAVEL, TAGS.BLADE, TAGS.CSS, TAGS.JS, TAGS.SQLITE, TAGS.XAMPP, TAGS.CLOUDINARY, TAGS.GEMINI],
     },
     {
@@ -111,7 +111,7 @@ export const PROJECTS = [
             "StudyBot++ is an NLP-powered study assistant that combines Generative AI with Spaced Repetition (SM-2) to automate quiz creation, summarization, and review scheduling.",
         link: "https://studybot-nlp.streamlit.app/",
         github: "https://github.com/parthpathak719/StudyBot",
-        image: "/projects/studybot.jpg",
+        image: "/Personal-Website/projects/studybot.jpg",
         tags: [TAGS.PYTHON, TAGS.STREAMLIT, TAGS.HUGGINGFACE, TAGS.PYTORCH, TAGS.SM2],
     },
     {
@@ -119,7 +119,7 @@ export const PROJECTS = [
         description:
             "This project implements and compares PointNet and PointNet++ architectures for 3D point cloud classification using the ModelNet10 dataset. The goal is to directly process raw point cloud data while handling permutation invariance and capturing both global and local geometric features.",
         github: "https://github.com/parthpathak719/3D-Object-Classification-On-ModelNet10",
-        image: "/projects/deeplearning.png",
+        image: "/Personal-Website/projects/deeplearning.png",
         tags: [TAGS.PYTHON, TAGS.PYTORCH, TAGS.NUMPY, TAGS.TRIMESH, TAGS.SCIKIT, TAGS.MATPLOTLIB, TAGS.GRADIO],
     },
 ];
