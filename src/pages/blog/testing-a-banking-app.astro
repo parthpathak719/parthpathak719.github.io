@@ -1,0 +1,129 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout hideNavbar={true}>
+
+  <section class="min-h-screen px-6 py-20">
+    <div class="max-w-3xl mx-auto">
+
+      <h1 
+        class="text-4xl md:text-6xl font-bold mb-6 text-shadow-purple text-center"
+        data-aos="fade-right"
+      >
+        Black Box Testing On a Banking App
+      </h1>
+
+      <p 
+        class="text-lg text-gray-400 mb-12 text-center"
+        data-aos="fade-right"
+        data-aos-delay="100"
+      >
+        What happened when I tried to break a banking website using just Burp Suite 👀
+      </p>
+
+      <div class="space-y-8 text-gray-300 text-lg leading-relaxed">
+
+        <!-- Personal vibe -->
+        <div data-aos="fade-right" data-aos-delay="200">
+          <p>
+            I've been getting into cybersecurity lately, especially application based, and honestly… breaking stuff is kinda fun 😅  
+            So I mess around with intentionally vulnerable apps like this just to practice and see what I can find.
+          </p>
+        </div>
+        
+        <!-- Setup -->
+        <div data-aos="fade-right" data-aos-delay="250">
+          <h2 class="text-2xl font-bold text-white mb-2">The Setup</h2>
+          <p>
+            I tested 
+            <a href="https://demo.testfire.net" target="_blank" class="text-primary underline">
+              demo.testfire.net
+            </a> 
+            with zero prior info — pure black-box style. No source code, no hints. 
+            Just me, the browser, and Burp Suite.
+          </p>
+        </div>
+
+        <!-- Findings -->
+        <div data-aos="fade-right" data-aos-delay="300">
+          <h2 class="text-2xl font-bold text-white mb-2">What I Found</h2>
+          <p>
+            Turns out… a lot.  
+            I discovered <span class="text-primary font-bold">25 vulnerabilities</span> across different categories.
+          </p>
+        </div>
+
+        <!-- Fun Stuff -->
+        <div data-aos="fade-right" data-aos-delay="350">
+          <h2 class="text-2xl font-bold text-white mb-2">The Fun Stuff 💥</h2>
+          <ul class="list-disc ml-6 space-y-2">
+            <li>XSS worked instantly (yes, <code>alert()</code> popped)</li>
+            <li>SQL Injection bypassed login like it was nothing (<code>'OR 1=1-- supremacy</code>)</li>
+            <li>Admin login worked with just <code>admin / admin</code></li>
+            <li>Client-side validation? Completely bypassed (just had to disable JavaScript)</li>
+          </ul>
+        </div>
+
+        <!-- Weird Stuff -->
+        <div data-aos="fade-right" data-aos-delay="400">
+          <h2 class="text-2xl font-bold text-white mb-2">The Weird Stuff 🤨</h2>
+          <ul class="list-disc ml-6 space-y-2">
+            <li>Broken links everywhere (404 simulator basically)</li>
+            <li>Submit button that literally does nothing</li>
+            <li>Backend mapping showing wrong content (??)</li>
+            <li>Survey that ignores your answer (like what's the point then??)</li>
+          </ul>
+        </div>
+
+        <!-- Serious Stuff -->
+        <div data-aos="fade-right" data-aos-delay="450">
+          <h2 class="text-2xl font-bold text-white mb-2">The Serious Stuff 🔐</h2>
+          <ul class="list-disc ml-6 space-y-2">
+            <li>Authentication completely broken</li>
+            <li>Access control issues (users seeing wrong things)</li>
+            <li>Information leaks (server details, documents, etc.)</li>
+          </ul>
+        </div>
+
+        <!-- PDF Section -->
+        <div data-aos="fade-right" data-aos-delay="500">
+          <h2 class="text-2xl font-bold text-white mb-2">Full Report 📄</h2>
+          <p>
+            I documented everything in detail — payloads, responses, and all vulnerabilities.
+          </p>
+
+          <a 
+            href="/files/assignment1.pdf" 
+            target="_blank"
+            class="inline-block mt-4 px-6 py-3 bg-primary text-white rounded-xl hover:opacity-80 transition"
+          >
+            View Full Report →
+          </a>
+        </div>
+
+        <!-- Learning -->
+        <div data-aos="fade-right" data-aos-delay="550">
+          <h2 class="text-2xl font-bold text-white mb-2">What I Learned</h2>
+          <p>
+            Security isn't always about complex hacks — most issues came from 
+            <span class="text-primary">bad validation, weak logic, and simple mistakes</span>.  
+            Small flaws can lead to big problems.
+          </p>
+        </div>
+
+        <!-- Ending -->
+        <div data-aos="fade-right" data-aos-delay="600">
+          <h2 class="text-2xl font-bold text-white mb-2">Finally</h2>
+          <p>
+            This wasn't hacking — just exploring how systems break.  
+            And honestly… breaking stuff is the best way to learn 😌
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

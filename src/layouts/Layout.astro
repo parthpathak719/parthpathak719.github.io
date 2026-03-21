@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Navbar from "../components/Navbar/NavBar.astro";
+const { hideNavbar = false } = Astro.props;
 import Footer from "../components/Footer/Footer.astro";
 import Background from "../components/UI/Background.astro";
 import "aos/dist/aos.css";
@@ -17,7 +18,7 @@ import "aos/dist/aos.css";
 	</head>
 	<body class="text-white">
 		<Background />
-		<Navbar />
+		{!hideNavbar && <Navbar />}
 		<slot />
 		<Footer />
 
