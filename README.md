@@ -30,7 +30,7 @@ Built to be fast, minimal, and actually fun to explore.
 
 ## 📂 Sections
 
-- 🏠 Home (Hero + intro)  
+- 🏠 Home  
 - 🙋 About Me  
 - 💼 Projects  
 - ✍️ Blog  
