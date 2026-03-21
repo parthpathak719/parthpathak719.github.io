@@ -5,7 +5,7 @@ import icon from 'astro-icon';
 
 export default defineConfig({
   site: "https://parthpathak719.github.io",
-  base: "/Personal-Website/", 
+  base: "/", 
 
   devToolbar: {
     enabled: false
