@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
 
 export default defineConfig({
-  site: "https://parthpathak719.github.io",
+  site: "https://parth.github.io",
   base: "/", 
 
   devToolbar: {
