@@ -2,7 +2,7 @@ export const PERSONAL_INFO = {
     name: "Parth Pathak",
     title: "Who stands behind the code?",
     description: [
-        "👋 I build things, break them, and call the breaking part \"testing\" — most of my time is honestly just surviving college and doing whatever they throw at me, but in the gaps I'm poking around web dev, cloud, cybersecurity, or whatever looks interesting enough to dive into.",
+        "I build things, break them, and call the breaking part \"testing\" — most of my time is honestly just surviving college and doing whatever they throw at me, but in the gaps I'm poking around web dev, cloud, cybersecurity, or whatever looks interesting enough to dive into.",
         "Big believer in vibe coding: try it, tweak it, ship it, regret it, fix it, repeat until it doesn't embarrass you. I like figuring out how systems actually work behind the scenes — not just the \"how to use it\" part, but the \"why does this even work\" part.",
         "Outside the terminal — anime marathons, cricket hot takes, random tech deep dives at 2am, and redesigning things nobody asked me to redesign but they look better now so you're welcome. Always building. Always learning. Occasionally sleeping.",
     ],
