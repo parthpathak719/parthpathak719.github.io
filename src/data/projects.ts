@@ -99,8 +99,8 @@ export const TAGS = {
 export const PROJECTS = [
     {
         title: "🪄 The-Arcane-Universe",
-        description:
-            "A cinematic, full-stack web experience inspired by the magical world of Harry Potter. The-Arcane-Universe is a dynamic Laravel-based web application featuring interactive archives, character records, magical animations, and AI-enhanced visual elements.",
+        description: 
+                "A cinematic, full-stack web experience inspired by the magical world of Harry Potter — because why build a boring project when you can build one with Hogwarts archives, character records, and magical animations? Built on Laravel using PHP and XAMPP with a Blade + CSS3 + JavaScript frontend, SQLite database, and AI-generated visuals powered by GeminiPro. Media is managed through Cloudinary, the whole app is deployed on InfinityFree, but sadly, the hosted version lags a lot coz this has audios and videos. But hey, at least I can give the source code. Oh and did I mention this took 3 months to finish? Not because it's complicated (okay, it is), but because college decided that 5th semester was the perfect time to be absolutely unhinged with the workload. Somehow, between assignments, exams, and questioning my life choices, I still shipped it — and it turned out to be the biggest personal project I've ever built. Equal parts web dev practice and an excuse to spend way too much time on Harry Potter lore.",
         github: "https://github.com/parthpathak719/The-Arcane-Universe",
         image: "/projects/hogwarts.jpg",
         tags: [TAGS.PHP, TAGS.LARAVEL, TAGS.BLADE, TAGS.CSS, TAGS.JS, TAGS.SQLITE, TAGS.XAMPP, TAGS.CLOUDINARY, TAGS.GEMINI],
@@ -108,7 +108,7 @@ export const PROJECTS = [
     {
         title: "📘 StudyBot++ — SmartStudy Engine",
         description:
-            "StudyBot++ is an NLP-powered study assistant that combines Generative AI with Spaced Repetition (SM-2) to automate quiz creation, summarization, and review scheduling.",
+            "An NLP-powered study assistant built as a college project that combines T5 for question generation, BART for summarization, and the SM-2 spaced repetition algorithm — all in one place. Because manually making flashcards and figuring out when to review them is a 2010 problem. Built with Python, Streamlit, and HuggingFace Transformers. Team project, but still counts.",
         link: "https://studybot-nlp.streamlit.app/",
         github: "https://github.com/parthpathak719/StudyBot",
         image: "/projects/studybot.jpg",
@@ -117,7 +117,7 @@ export const PROJECTS = [
     {
         title: "🧊 3D Object Classification using PointNet & PointNet++",
         description:
-            "This project implements and compares PointNet and PointNet++ architectures for 3D point cloud classification using the ModelNet10 dataset. The goal is to directly process raw point cloud data while handling permutation invariance and capturing both global and local geometric features.",
+            "A deep learning project that implements and compares PointNet and PointNet++ for classifying 3D objects from raw point cloud data — no voxelization, no shortcuts. Trained on ModelNet10 across 10 object categories, with PointNet++ hitting 86.38% accuracy by actually paying attention to local geometry. Wrapped it up with a Gradio web interface so you can drop in a .off file and get a real-time classification. College project, but the results were genuinely satisfying.",
         github: "https://github.com/parthpathak719/3D-Object-Classification-On-ModelNet10",
         image: "/projects/deeplearning.png",
         tags: [TAGS.PYTHON, TAGS.PYTORCH, TAGS.NUMPY, TAGS.TRIMESH, TAGS.SCIKIT, TAGS.MATPLOTLIB, TAGS.GRADIO],
