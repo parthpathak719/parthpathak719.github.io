@@ -27,14 +27,20 @@ import Badge from "../UI/Badge.astro";
             <Title level={3}>
                 {PERSONAL_INFO.title}
             </Title>
-            <p
-                class="text-lg md:text-xl text-gray-300 leading-relaxed font-light"
-            >
-                Hi! I'm <span class="text-white font-semibold"
-                    >{PERSONAL_INFO.name}</span
-                >
-                {PERSONAL_INFO.description}
-            </p>
+            <div class="flex flex-col gap-4">
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed font-light">
+                    Hi! I'm <span class="text-white font-semibold"
+                        >{PERSONAL_INFO.name}</span
+                    >
+                </p>
+                {
+                    PERSONAL_INFO.description.map((para) => (
+                        <p class="text-lg md:text-xl text-gray-300 leading-relaxed font-light">
+                            {para}
+                        </p>
+                    ))
+                }
+            </div>
             <div class="flex flex-wrap gap-4 mt-4">
                 {
                     PERSONAL_INFO.skills &&
