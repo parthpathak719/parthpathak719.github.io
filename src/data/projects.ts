@@ -99,8 +99,10 @@ export const TAGS = {
 export const PROJECTS = [
     {
         title: "🪄 The-Arcane-Universe",
-        description: 
-                "A cinematic, full-stack web experience inspired by the magical world of Harry Potter — because why build a boring project when you can build one with Hogwarts archives, character records, and magical animations? Built on Laravel using PHP and XAMPP with a Blade + CSS3 + JavaScript frontend, SQLite database, and AI-generated visuals powered by GeminiPro. Media is managed through Cloudinary, the whole app is deployed on InfinityFree, but sadly, the hosted version lags a lot coz this has audios and videos. But hey, at least I can give the source code. Oh and did I mention this took 3 months to finish? Not because it's complicated (okay, it is), but because college decided that 5th semester was the perfect time to be absolutely unhinged with the workload. Somehow, between assignments, exams, and questioning my life choices, I still shipped it — and it turned out to be the biggest personal project I've ever built. Equal parts web dev practice and an excuse to spend way too much time on Harry Potter lore.",
+        description: [
+            "A cinematic, full-stack web experience inspired by the magical world of Harry Potter — because why build a boring project when you can build one with Hogwarts archives, character records, and magical animations? Built on Laravel using PHP and XAMPP with a Blade + CSS3 + JavaScript frontend, SQLite database, and AI-generated visuals powered by GeminiPro. Media is managed through Cloudinary, the whole app is deployed on InfinityFree, but sadly, the hosted version lags a lot coz this has audios and videos. But hey, at least I can give the source code.",
+            "Oh and did I mention this took 3 months to finish? Not because it's complicated (okay, it is), but because college decided that 5th semester was the perfect time to be absolutely unhinged with the workload. Somehow, between assignments, exams, and questioning my life choices, I still shipped it — and it turned out to be the biggest personal project I've ever built. Equal parts web dev practice and an excuse to spend way too much time on Harry Potter lore.",
+        ],
         github: "https://github.com/parthpathak719/The-Arcane-Universe",
         image: "/projects/hogwarts.jpg",
         tags: [TAGS.PHP, TAGS.LARAVEL, TAGS.BLADE, TAGS.CSS, TAGS.JS, TAGS.SQLITE, TAGS.XAMPP, TAGS.CLOUDINARY, TAGS.GEMINI],

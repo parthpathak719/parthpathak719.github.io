@@ -5,7 +5,7 @@ import Badge from "../UI/Badge.astro";
 
 interface Props {
     title: string;
-    description: string;
+    description: string | string[];
     image: string;
     tags: Array<{
         name: string;
@@ -17,6 +17,7 @@ interface Props {
 }
 
 const { image, title, description, tags, link, github } = Astro.props;
+const paragraphs = Array.isArray(description) ? description : [description];
 ---
 
 <article
@@ -64,9 +65,15 @@ const { image, title, description, tags, link, github } = Astro.props;
             }
         </ul>
 
-        <p class="text-lg text-gray-300 mb-8 leading-relaxed font-light">
-            {description}
-        </p>
+        <div class="flex flex-col gap-4 mb-8">
+            {
+                paragraphs.map((para) => (
+                    <p class="text-lg text-gray-300 leading-relaxed font-light">
+                        {para}
+                    </p>
+                ))
+            }
+        </div>
 
         <footer class="flex items-center justify-start gap-x-4">
             {
