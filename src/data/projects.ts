@@ -100,8 +100,8 @@ export const PROJECTS = [
     {
         title: "🪄 The-Arcane-Universe",
         description: [
-            "A cinematic, full-stack web experience inspired by the magical world of Harry Potter — because why build a boring project when you can build one with Hogwarts archives, character records, and magical animations? Built on Laravel using PHP and XAMPP with a Blade + CSS3 + JavaScript frontend, SQLite database, and AI-generated visuals powered by GeminiPro. Media is managed through Cloudinary, the whole app is deployed on InfinityFree, but sadly, the hosted version lags a lot coz this has audios and videos. But hey, at least I can give the source code.",
-            "Oh and did I mention this took 3 months to finish? Not because it's complicated (okay, it is), but because college decided that 5th semester was the perfect time to be absolutely unhinged with the workload. Somehow, between assignments, exams, and questioning my life choices, I still shipped it — and it turned out to be the biggest personal project I've ever built. Equal parts web dev practice and an excuse to spend way too much time on Harry Potter lore.",
+            "A cinematic, full-stack web experience inspired by the magical world of Harry Potter because why build a boring project when you can build one with Hogwarts archives, character records, and magical animations? Built on Laravel using PHP and XAMPP with a Blade + CSS3 + JavaScript frontend, SQLite database, and AI-generated visuals powered by GeminiPro. Media is managed through Cloudinary, the whole app is deployed on InfinityFree, but sadly, the hosted version lags a lot coz this has audios and videos. But hey, at least I can give the source code.",
+            "Oh and did I mention this took 3 months to finish? Not because it's complicated (okay, it is), but because college decided that 5th semester was the perfect time to be absolutely unhinged with the workload. Somehow, between assignments, exams, and questioning my life choices, I still shipped it and it turned out to be the biggest personal project I've ever built. Equal parts web dev practice and an excuse to spend way too much time on Harry Potter lore.",
         ],
         github: "https://github.com/parthpathak719/The-Arcane-Universe",
         image: "/projects/hogwarts.jpg",
@@ -110,7 +110,7 @@ export const PROJECTS = [
     {
         title: "📘 StudyBot++ — SmartStudy Engine",
         description:
-            "An NLP-powered study assistant built as a college project that combines T5 for question generation, BART for summarization, and the SM-2 spaced repetition algorithm — all in one place. Because manually making flashcards and figuring out when to review them is a 2010 problem. Built with Python, Streamlit, and HuggingFace Transformers. Team project, but still counts.",
+            "An NLP-powered study assistant built as a college project that combines T5 for question generation, BART for summarization, and the SM-2 spaced repetition algorithm all in one place. Because manually making flashcards and figuring out when to review them is a 2010 problem. Built with Python, Streamlit, and HuggingFace Transformers. Team project, but still counts.",
         link: "https://studybot-nlp.streamlit.app/",
         github: "https://github.com/parthpathak719/StudyBot",
         image: "/projects/studybot.jpg",

@@ -19,7 +19,7 @@ import Layout from "../../layouts/Layout.astro";
         data-aos="fade-right"
         data-aos-delay="100"
       >
-        What happened when I tried to break a banking website using just Burp Suite 👀
+        Me, Burp Suite, and a banking site that had absolutely no idea what was coming. 👀
       </p>
 
       <div class="space-y-8 text-gray-300 text-lg leading-relaxed">
@@ -27,8 +27,8 @@ import Layout from "../../layouts/Layout.astro";
         <!-- Personal vibe -->
         <div data-aos="fade-right" data-aos-delay="200">
           <p>
-            I've been getting into cybersecurity lately, especially application based, and honestly… breaking stuff is kinda fun 😅  
-            So I mess around with intentionally vulnerable apps like this just to practice and see what I can find.
+            I've been going down the cybersecurity rabbit hole lately specifically application security and turns out breaking stuff is genuinely fun. 
+            So I did what any reasonable person does: found an intentionally vulnerable banking app and went to practice.
           </p>
         </div>
         
@@ -36,12 +36,12 @@ import Layout from "../../layouts/Layout.astro";
         <div data-aos="fade-right" data-aos-delay="250">
           <h2 class="text-2xl font-bold text-white mb-2">The Setup</h2>
           <p>
-            I tested 
+            Target: 
             <a href="https://demo.testfire.net" target="_blank" class="text-primary underline">
               demo.testfire.net
-            </a> 
-            with zero prior info — pure black-box style. No source code, no hints. 
-            Just me, the browser, and Burp Suite.
+            </a>. 
+            Mode: pure black-box - no source code & no hints. 
+            Just me, Brave, and Burp Suite ready to cause some problems.
           </p>
         </div>
 
@@ -49,8 +49,8 @@ import Layout from "../../layouts/Layout.astro";
         <div data-aos="fade-right" data-aos-delay="300">
           <h2 class="text-2xl font-bold text-white mb-2">What I Found</h2>
           <p>
-            Turns out… a lot.  
-            I discovered <span class="text-primary font-bold">25 vulnerabilities</span> across different categories.
+            Short answer: a lot. Long answer: <span class="text-primary font-bold">25 vulnerabilities</span>. 
+            Built different. Unfortunately, that difference was entirely in the wrong direction.
           </p>
         </div>
 
@@ -69,10 +69,10 @@ import Layout from "../../layouts/Layout.astro";
         <div data-aos="fade-right" data-aos-delay="400">
           <h2 class="text-2xl font-bold text-white mb-2">The Weird Stuff 🤨</h2>
           <ul class="list-disc ml-6 space-y-2">
-            <li>Broken links everywhere (404 simulator basically)</li>
-            <li>Submit button that literally does nothing</li>
-            <li>Backend mapping showing wrong content (??)</li>
-            <li>Survey that ignores your answer (like what's the point then??)</li>
+            <li>Broken links everywhere..... less a website, more a 404 collection.</li>
+            <li>A submit button that does absolutely nothing (decorative I guess).</li>
+            <li>Backend serving wrong content to wrong pages for no reason whatsoever.</li>
+            <li>A survey that completely ignores your answers (truly the most relatable feature ong).</li>
           </ul>
         </div>
 
@@ -80,9 +80,9 @@ import Layout from "../../layouts/Layout.astro";
         <div data-aos="fade-right" data-aos-delay="450">
           <h2 class="text-2xl font-bold text-white mb-2">The Serious Stuff 🔐</h2>
           <ul class="list-disc ml-6 space-y-2">
-            <li>Authentication completely broken</li>
-            <li>Access control issues (users seeing wrong things)</li>
-            <li>Information leaks (server details, documents, etc.)</li>
+            <li>Authentication? Broken. Like, fundamentally.</li>
+            <li>Access control issues (users seeing things they shouldn't).</li>
+            <li>Information leaks spilling server details and documents like it's a public blog.</li>
           </ul>
         </div>
 
@@ -90,7 +90,7 @@ import Layout from "../../layouts/Layout.astro";
         <div data-aos="fade-right" data-aos-delay="500">
           <h2 class="text-2xl font-bold text-white mb-2">Full Report 📄</h2>
           <p>
-            I documented everything in detail — payloads, responses, and all vulnerabilities.
+            I documented everything — every payload, every response, every "wait, really?" moment.
           </p>
 
           <a 
@@ -104,20 +104,21 @@ import Layout from "../../layouts/Layout.astro";
 
         <!-- Learning -->
         <div data-aos="fade-right" data-aos-delay="550">
-          <h2 class="text-2xl font-bold text-white mb-2">What I Learned</h2>
+          <h2 class="text-2xl font-bold text-white mb-2">What I Actually Learned</h2>
           <p>
-            Security isn't always about complex hacks — most issues came from 
-            <span class="text-primary">bad validation, weak logic, and simple mistakes</span>.  
-            Small flaws can lead to big problems.
+            Security isn't always some elite hacker movie moment. Most of these came down to 
+            <span class="text-primary">bad validation, weak logic, and genuinely avoidable mistakes</span>. 
+            "The scariest vulnerabilities weren't complex, they were lazy." - Our college professor (bro left after 1 month btw).
           </p>
         </div>
 
         <!-- Ending -->
         <div data-aos="fade-right" data-aos-delay="600">
-          <h2 class="text-2xl font-bold text-white mb-2">Finally</h2>
+          <h2 class="text-2xl font-bold text-white mb-2">Was This Hacking?</h2>
           <p>
-            This wasn't hacking — just exploring how systems break.  
-            And honestly… breaking stuff is the best way to learn 😌
+            Technically no. Legally yes I'm fine. It's a demo site so the whole point is getting broken. 
+            But honestly, poking at how systems fall apart is the fastest way to understand how to build ones that don't. 
+            10/10 would break again. 😌
           </p>
         </div>
 
