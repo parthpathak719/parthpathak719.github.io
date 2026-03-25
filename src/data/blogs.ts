@@ -11,7 +11,7 @@ export const BLOGS = [
   },
   {
     title: "Collapse",
-    description: "Four students. One classroom. A reality that doesn't follow the rules anymore.",
+    description: "A short film inspired by Schrödinger's Cat. Four students walk into a classroom and reality stops behaving normally.",
     link: "/blog/collapse"
   },
   {
