@@ -94,11 +94,31 @@ export const TAGS = {
         class: "bg-[#ff4b4b]/20 text-[#ff7a7a]",
         icon: "simple-icons:gradio",
     },
+    GNS3: {
+        name: "GNS3",
+        class: "bg-[#1da462]/20 text-[#4dbb84]",
+        icon: "mdi:router-network",
+    },
+    CISCO: {
+        name: "Cisco IOSv",
+        class: "bg-[#1ba0d7]/20 text-[#49c0f0]",
+        icon: "simple-icons:cisco",
+    },
+    OSPF: {
+        name: "OSPF",
+        class: "bg-gray-600/20 text-gray-300",
+        icon: "lucide:network",
+    },
+    ISPF: {
+        name: "iSPF",
+        class: "bg-gray-600/20 text-gray-300",
+        icon: "lucide:git-branch",
+    },
 };
 
 export const PROJECTS = [
     {
-        title: "🪄 The-Arcane-Universe",
+        title: "🪄 The Arcane Universe",
         description: [
             "A cinematic, full-stack web experience inspired by the magical world of Harry Potter because why build a boring project when you can build one with Hogwarts archives, character records, and magical animations? Built on Laravel using PHP and XAMPP with a Blade + CSS3 + JavaScript frontend, SQLite database, and AI-generated visuals powered by GeminiPro. Media is managed through Cloudinary, the whole app is deployed on InfinityFree, but sadly, the hosted version lags a lot coz this has audios and videos. But hey, at least I can give the source code.",
             "Oh and did I mention this took 3 months to finish? Not because it's complicated (okay, it is), but because college decided that 5th semester was the perfect time to be absolutely unhinged with the workload. Somehow, between assignments, exams, and questioning my life choices, I still shipped it and it turned out to be the biggest personal project I've ever built. Equal parts web dev practice and an excuse to spend way too much time on Harry Potter lore.",
@@ -117,6 +137,14 @@ export const PROJECTS = [
         tags: [TAGS.PYTHON, TAGS.STREAMLIT, TAGS.HUGGINGFACE, TAGS.PYTORCH, TAGS.SM2],
     },
     {
+        title: "🌐 OSPF/ISPF Network Simulation",
+        description:
+            "Built a GNS3 lab to settle an argument nobody asked for - does iSPF actually beat traditional OSPF? Turns out it does. Set up two identical 5-router networks with real Cisco IOSv images, broke things in three different ways, and measured who recovered faster. The best part was Scenario 3, where iSPF looked at a link cost change, decided it wasn't its problem, and did absolutely nothing - while OSPF panicked and ran a full Dijkstra for no reason. Walked into the presentation with full confidence, explained every single detail, even picked the topic from our professor's own suggestions. She cut marks anyway. The routers performed flawlessly. The grading did not.",
+        github: "https://github.com/parthpathak719/OSPF-ISPF-Network-Simulation",
+        image: "/projects/ospf.jpg",
+        tags: [TAGS.GNS3, TAGS.CISCO, TAGS.OSPF, TAGS.ISPF],
+    },
+    {
         title: "🧊 3D Object Classification using PointNet & PointNet++",
         description:
             "A deep learning project that implements and compares PointNet and PointNet++ for classifying 3D objects from raw point cloud data — no voxelization, no shortcuts. Trained on ModelNet10 across 10 object categories, with PointNet++ hitting 86.38% accuracy by actually paying attention to local geometry. Wrapped it up with a Gradio web interface so you can drop in a .off file and get a real-time classification. College project, but the results were genuinely satisfying.",
@@ -125,3 +153,6 @@ export const PROJECTS = [
         tags: [TAGS.PYTHON, TAGS.PYTORCH, TAGS.NUMPY, TAGS.TRIMESH, TAGS.SCIKIT, TAGS.MATPLOTLIB, TAGS.GRADIO],
     },
 ];
+
+export const FEATURED_PROJECTS = PROJECTS.slice(0, 2);
+export const ALL_PROJECTS = PROJECTS;

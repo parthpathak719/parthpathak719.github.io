@@ -1,0 +1,17 @@
+---
+import { Icon } from "astro-icon/components";
+import CardProyect from "../components/Proyect/CardProyect.astro";
+import Section from "../components/UI/Section.astro";
+import Layout from "../layouts/Layout.astro";
+import { ALL_PROJECTS } from "../data/projects";
+---
+
+<Layout hideNavbar={true} title="All Projects — Parth Pathak">
+    <main class="max-w-7xl mx-auto px-4 py-0">
+        <Section id="all-projects" title="Projects" titleClassName="mb-24">
+            <div class="flex flex-col gap-y-32">
+                {ALL_PROJECTS.map((project) => <CardProyect {...project} />)}
+            </div>
+        </Section>
+    </main>
+</Layout>
