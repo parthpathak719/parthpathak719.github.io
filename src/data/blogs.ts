@@ -1,8 +1,8 @@
 export const BLOGS = [
   {
-    title: "Building My Portfolio",
+    title: "Building This Space",
     description: "Not a tutorial. Just me figuring things out and pretending I knew what I was doing.",
-    link: "/blog/building-my-portfolio"
+    link: "/blog/building-this-space"
   },
   {
     title: "Black Box Testing On a Banking App",
