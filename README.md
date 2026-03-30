@@ -1,8 +1,10 @@
-# 🚀 Personal Portfolio Website
+# 🚀 My Personal Website
 
-A modern, interactive portfolio showcasing my projects, blogs, and experiments.
+A corner of the internet where I build, break, and experiment with ideas.
 
-Built to be fast, minimal, and actually fun to explore.
+A space to explore projects, thoughts, and things I’m currently curious about, constantly evolving as I learn and create.
+
+Clean, fast, and made to be explored.
 
 ---
 
