@@ -2,6 +2,8 @@
 
 A corner of the internet where I build, break, and experiment with ideas.
 
+A space to explore projects, thoughts, and things I’m currently curious about, constantly evolving as I learn and create.
+
 Clean, fast, and made to be explored.
 
 ---
