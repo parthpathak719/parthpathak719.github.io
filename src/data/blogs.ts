@@ -10,14 +10,14 @@ export const BLOGS = [
     title: "Black Box Testing On a Banking App",
     description: "Me, Burp Suite, and a banking site that had absolutely no idea what was coming. 👀",
     link: "/blog/testing-a-banking-app",
-    date: "March 24, 2026",
+    date: "March 22, 2026",
     readTime: "3 min read"
   },
   {
     title: "Collapse",
     description: "A short film inspired by Schrödinger's Cat. Four students walk into a classroom and reality stops behaving normally.",
     link: "/blog/collapse",
-    date: "March 22, 2026",
+    date: "March 24, 2026",
     readTime: "4 min read"
   },
   {
