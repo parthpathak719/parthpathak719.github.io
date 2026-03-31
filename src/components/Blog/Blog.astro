@@ -36,5 +36,30 @@ import Title from "../UI/Title.astro";
       }
     </div>
 
+    <div class="text-center mt-10" data-aos="fade-up">
+      <a 
+        id="see-all-blogs"
+        href="/blog" 
+        class="inline-block border border-primary font-semibold px-6 py-3 rounded-xl transition duration-300"
+        style="background-color: transparent; color: #7836cf;"
+      >
+        See All Blogs →
+      </a>
+    </div>
+
   </div>
 </section>
+
+<script>
+  const btn = document.getElementById("see-all-blogs");
+  btn?.addEventListener("mouseenter", () => {
+    btn.style.backgroundColor = "#512092";
+    btn.style.color = "white";
+    btn.style.borderColor = "#7836cf";
+  });
+  btn?.addEventListener("mouseleave", () => {
+    btn.style.backgroundColor = "transparent";
+    btn.style.color = "#7836cf";
+    btn.style.borderColor = "#7836cf";
+  });
+</script>

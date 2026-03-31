@@ -25,6 +25,6 @@ export const BLOGS = [
     description: "Between the anime, live action, manga and global hype, One Piece is reaching a whole new peak.",
     link: "/blog/one-piece",
     date: "March 28, 2026",
-    readTime: "2 min read"
+    readTime: "4 min read"
   }  
 ];
