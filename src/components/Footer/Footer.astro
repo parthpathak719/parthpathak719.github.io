@@ -2,24 +2,47 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<footer class="py-12 border-t border-white/5 bg-gray-950/50 backdrop-blur-sm">
-    <div
-        class="max-w-7xl mx-auto px-6 flex flex-row items-center justify-center gap-4 text-center"
-    >
-        <p class="text-gray-400 text-sm md:text-base">
-            Developed by <span class="text-white font-medium italic"
-                >Parth Pathak</span
+<footer class="py-12 border-t border-white/5 bg-gray-950/50 backdrop-blur-sm relative">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center gap-3 text-center">
+        
+        <div class="flex items-center gap-3">
+            <p class="text-gray-400 text-lg md:text-lg">
+                Developed by <span class="text-white font-medium italic">Parth Pathak</span>
+            </p>
+            
+            <a
+                href="https://github.com/parthpathak719/parthpathak719.github.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-400 hover:text-primary transition-all duration-300 hover:scale-110 active:scale-95"
+                aria-label="Parth Pathak's GitHub"
             >
-        </p>
+                <Icon name="lucide:github" class="size-6" />
+            </a>
+        </div>
 
-        <a
-            href="https://github.com/parthpathak719/parthpathak719.github.io"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-gray-400 hover:text-primary transition-all duration-300 hover:scale-110 active:scale-95"
-            aria-label="Parth Pathak's GitHub"
-        >
-            <Icon name="lucide:github" class="size-6" />
-        </a>
+        <div class="flex items-center gap-4 mt-1">
+            <a href="https://amrita.town/prev"
+               class="text-gray-500 hover:text-white text-base transition-colors duration-200">
+                ← prev
+            </a>
+            <span class="text-gray-700 text-lg">|</span>
+            <a href="https://amrita.town/random"
+               class="text-gray-500 hover:text-white text-2xl transition-colors duration-200 leading-none">
+                ⚄
+            </a>
+            <span class="text-gray-700 text-lg">|</span>
+            <a href="https://amrita.town/next"
+               class="text-gray-500 hover:text-white text-base transition-colors duration-200">
+                next →
+            </a>
+        </div>
     </div>
+
+    <a
+        href="https://amrita.town"
+        class="absolute bottom-4 left-6 text-gray-500 hover:text-white text-base transition-colors duration-200"
+    >
+        amrita.town
+    </a>
 </footer>
