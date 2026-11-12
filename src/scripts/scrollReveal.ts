@@ -3,7 +3,7 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const targets = [...document.querySelectorAll<HTMLElement>([
   '.hero > *',
   '.section-heading', '.about-grid', '.credentials-heading', '.credential-card',
-  '.featured-project', '.more-work', '.experience-row', '.security-report',
+  '.featured-project', '.more-work', '.experience-row',
   '.contact-section > *', '.project-index > :not(.archive)', '.archive-row',
 ].join(', '))];
 const revealed = new WeakSet<HTMLElement>();
@@ -22,12 +22,15 @@ function markRevealed(element: HTMLElement) {
 function updateReveal() {
   observer?.disconnect();
   if (paused || reducedMotion.matches || !('IntersectionObserver' in window)) {
+    document.documentElement.classList.remove('effects-starting');
     document.documentElement.classList.remove('scroll-reveal-ready');
     animations.forEach(animation => animation.cancel());
     animations.clear();
     initialized = true;
     return;
   }
+  // Start the opening animation alongside the background's first frame.
+  if (document.documentElement.classList.contains('effects-starting')) return;
 
   // Resuming effects should never hide content the visitor is already reading.
   if (initialized) targets.forEach(element => {
@@ -60,6 +63,9 @@ function updateReveal() {
 }
 
 document.addEventListener('focusin', event => {
+  // Only keyboard focus should finish a reveal. Moving a clicked element
+  // between pointer-down and pointer-up can swallow the first click.
+  if (!(event.target instanceof Element) || !event.target.matches(':focus-visible')) return;
   targets.forEach(element => {
     if (event.target instanceof Node && element.contains(event.target)) {
       markRevealed(element);
@@ -82,4 +88,5 @@ window.addEventListener('storage', event => {
   }
 });
 reducedMotion.addEventListener('change', updateReveal);
+window.addEventListener('portfolio-background-ready', updateReveal);
 updateReveal();

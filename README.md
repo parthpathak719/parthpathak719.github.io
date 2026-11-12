@@ -18,7 +18,7 @@ npm run preview
 
 ## Content and structure
 
-- `src/pages/index.astro`: about, categorized skills, selected projects, internships, linked credentials, a penetration-testing report, and contact.
+- `src/pages/index.astro`: about, categorized skills, selected projects, internships with expandable details and reports, linked credentials, and contact.
 - `src/pages/projects.astro`: the complete filterable index of 12 projects in personal priority order.
 - `src/data/projects.ts`: curated project stacks, descriptions, categories, links, and technical context.
 - `src/data/skills.ts`: compact skill groups covering languages, web, AI, infrastructure, and security.
@@ -29,7 +29,7 @@ The site does not include a photograph or resume download. Project figures disti
 
 Project details use native HTML disclosures. Navigation and filtering are progressively enhanced with small client scripts. Contact uses email and social links; no form backend or visitor data collection is required.
 
-## Visual effects and report
+## Visual effects and reports
 
 React Bits Light Pillar and Splash Cursor are bundled in `src/components/effects/`, mounted through a React island. The upstream license is preserved in `THIRD_PARTY_LICENSES/React-Bits.txt`. Source: [React Bits](https://github.com/DavidHDev/react-bits).
 
@@ -38,6 +38,7 @@ React Bits Light Pillar and Splash Cursor are bundled in `src/components/effects
 - The cursor is disabled on coarse-pointer devices; the background uses reduced resolution on small screens.
 - WebGL is optional; the document and its controls remain usable without it.
 - The documented training assessment is served at `/reports/web-application-penetration-test.pdf` (24 pages). The original source document is unchanged.
+- The Vidyakosh development internship report is served at `/reports/web-development-internship.pdf` (7 pages). Both reports appear inside their respective internship details.
 
 ## Deployment
 

@@ -6,7 +6,7 @@ import { projects } from '../data/projects';
 import { certificates } from '../data/credentials';
 import SocialLinks from '../components/SocialLinks.astro';
 import Credentials from '../components/Credentials.astro';
-import SecurityReport from '../components/SecurityReport.astro';
+import InternshipReportLink from '../components/InternshipReportLink.astro';
 import Skills from '../components/Skills.astro';
 ---
 <Layout>
@@ -15,7 +15,7 @@ import Skills from '../components/Skills.astro';
       <p class="hero-intro">COMPUTER SCIENCE STUDENT</p>
       <h1 id="hero-title">Parth Pathak<span>.</span></h1>
       <p class="hero-lead">Full-stack development.<br/><span class="discipline-ai">AI</span><span class="lead-comma">, </span><span class="discipline-cloud">cloud</span><span class="lead-comma">, and </span><span class="discipline-security">security.</span></p>
-      <p class="hero-description">I’m a computer science student. I build web applications and work on AI, cloud infrastructure, and application security.</p>
+      <p class="hero-description">I’m a final year computer science student. I build web applications and work on AI, cloud infrastructure, application security, and network security.</p>
       <div class="hero-actions"><a class="project-cta" href="#projects">View projects</a><SocialLinks /></div>
     </section>
     <section class="about-section wrap section-space" id="about" aria-labelledby="about-title">
@@ -36,11 +36,52 @@ import Skills from '../components/Skills.astro';
     </section>
     <section class="experience-section wrap section-space" id="experience" aria-labelledby="experience-title">
       <div class="section-heading"><h2 id="experience-title">Experience</h2></div>
-      <article class="experience-row"><div class="experience-time">Dec 2025 to Jan 2026</div><div class="experience-body"><h3>Application &amp; Network Security Intern</h3><p class="organization">National Informatics Centre <span>Ministry of Electronics & IT</span></p><p>Tested a deliberately vulnerable banking application using Burp Suite. Documented XSS, SQL injection authentication bypass, weak credentials, and information disclosure with reproduction steps and screenshots.</p><p>Practiced Nmap reconnaissance, Wireshark traffic analysis, session and CSRF checks, and Snort fundamentals.</p><a class="certificate-link" href={certificates.securityInternship} target="_blank" rel="noopener noreferrer">View Certificate <span aria-hidden="true">↗</span></a></div></article>
-      <article class="experience-row"><div class="experience-time">May to Jun 2025</div><div class="experience-body"><h3>Web Development Intern</h3><p class="organization">National Informatics Centre <span>Ministry of Electronics & IT</span></p><p>Contributed to Vidyakosh, NIC’s internal training management portal. Built profile features for online and residential training records using Laravel, PHP, MySQL, and Blade, and debugged issues across the frontend and backend.</p><a class="certificate-link" href={certificates.webInternship} target="_blank" rel="noopener noreferrer">View Certificate <span aria-hidden="true">↗</span></a></div></article>
+      <article class="experience-row" id="nic-security-internship">
+        <div class="experience-time">
+          <span>Dec 2025 to Jan 2026</span>
+          <a class="certificate-link" href={certificates.securityInternship} target="_blank" rel="noopener noreferrer">View Certificate <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="experience-body">
+          <h3>Application &amp; Network Security Intern</h3>
+          <p class="organization">National Informatics Centre <span>Ministry of Electronics & IT</span></p>
+          <p>Tested a deliberately vulnerable banking application with Burp Suite and practiced network reconnaissance and traffic analysis.</p>
+          <details class="internship-details">
+            <summary>View details <span class="expand-sign" aria-hidden="true">+</span></summary>
+            <div class="internship-detail-content">
+              <ul class="experience-highlights">
+                <li><strong>Application testing.</strong> Used Burp Suite for black-box testing of demo.testfire.net. Identified XSS, SQL injection authentication bypass, default credentials, and information disclosure. Checked session handling, CSRF tokens, HTTP headers, and cookie security attributes.</li>
+                <li><strong>Network analysis.</strong> Practiced host discovery, port scanning, and service/version detection with Nmap, and analyzed traffic with Wireshark. Explored network topology simulation in Cisco Packet Tracer and intrusion detection with Snort.</li>
+                <li><strong>Reporting.</strong> Documented findings with reproduction steps and screenshots, organized by OWASP Top 10. Distinguished confirmed security findings from functional issues and other observations.</li>
+              </ul>
+              <InternshipReportLink href="/reports/web-application-penetration-test.pdf" title="Penetration testing report" meta="NIC security internship · 24 pages · PDF" />
+            </div>
+          </details>
+        </div>
+      </article>
+      <article class="experience-row" id="nic-development-internship">
+        <div class="experience-time">
+          <span>May 2025 to June 2025</span>
+          <a class="certificate-link" href={certificates.webInternship} target="_blank" rel="noopener noreferrer">View Certificate <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="experience-body">
+          <h3>Web Development Intern</h3>
+          <p class="organization">National Informatics Centre <span>Ministry of Electronics & IT</span></p>
+          <p>Developed profile features for Vidyakosh, NIC’s internal training management portal, using Laravel, PHP, MySQL, and Blade.</p>
+          <details class="internship-details">
+            <summary>View details <span class="expand-sign" aria-hidden="true">+</span></summary>
+            <div class="internship-detail-content">
+              <ul class="experience-highlights">
+                <li><strong>Profile features.</strong> Developed pages displaying online and residential training records, connecting profile views to the relevant stored training data.</li>
+                <li><strong>Full-stack implementation.</strong> Built user-facing pages with Blade, HTML, CSS, and JavaScript. Used Laravel, PHP, and MySQL for backend functionality, data retrieval, and storage.</li>
+                <li><strong>Development &amp; debugging.</strong> Configured a local XAMPP environment for development and testing. Debugged and resolved issues across the frontend and backend.</li>
+              </ul>
+              <InternshipReportLink href="/reports/web-development-internship.pdf" title="Development report" meta="Vidyakosh · 7 pages · PDF" />
+            </div>
+          </details>
+        </div>
+      </article>
     </section>
 
-    <SecurityReport />
     <section class="contact-section wrap section-space" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">Get in touch.</h2><p>For opportunities, projects, or a conversation about something I’ve built.</p><SocialLinks /></section>
   </main>
 </Layout>

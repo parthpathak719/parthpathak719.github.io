@@ -26,10 +26,15 @@ const availableCategories = categories.filter((category) => category === 'All wo
       const selected = button.dataset.filter;
       buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
       let count = 0;
+      let lastVisible: HTMLElement | undefined;
       rows.forEach((row) => {
         row.hidden = selected !== 'All work' && row.dataset.category !== selected;
-        if (!row.hidden) count++;
+        if (!row.hidden) {
+          count++;
+          lastVisible = row;
+        }
       });
+      rows.forEach(row => row.classList.toggle('is-last-visible', row === lastVisible));
       const counter = browser.querySelector('[data-project-count]');
       if (counter) counter.textContent = String(count);
       const noun = browser.querySelector('[data-project-noun]');

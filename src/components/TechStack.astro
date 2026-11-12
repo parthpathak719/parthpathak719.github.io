@@ -6,6 +6,7 @@ type Mark = { name: string; collection?: 'logos' | 'simple'; color?: string };
 // Only use a mark for the named technology. Unbranded concepts stay text-only.
 const marks: Record<string, Mark> = {
   Python: { name: 'python' },
+  C: { name: 'c' },
   FastAPI: { name: 'fastapi-icon' },
   React: { name: 'react' },
   AWS: { name: 'amazonwebservices', collection: 'simple', color: '#ffac43' },
@@ -13,6 +14,14 @@ const marks: Record<string, Mark> = {
   Flask: { name: 'flask', collection: 'simple', color: '#f0f4ff' },
   Laravel: { name: 'laravel' },
   PostgreSQL: { name: 'postgresql' },
+  MySQL: { name: 'mysql' },
+  SQLite: { name: 'sqlite' },
+  Git: { name: 'git-icon' },
+  Linux: { name: 'linux-tux' },
+  VMware: { name: 'vmware' },
+  'Burp Suite': { name: 'burpsuite', collection: 'simple', color: '#ff916c' },
+  Wireshark: { name: 'wireshark', collection: 'simple', color: '#81b8f3' },
+  Snort: { name: 'snort', collection: 'simple', color: '#f3a8c2' },
   JavaScript: { name: 'javascript' },
   Streamlit: { name: 'streamlit' },
   Gemini: { name: 'google-gemini-icon' },
@@ -54,10 +63,22 @@ const marks: Record<string, Mark> = {
   "Monday.com": {"name": "monday-icon"},
   "Streamlit Community Cloud": {"name": "streamlit"},
 };
+// Product icons and official site favicons that are not in the bundled sets.
+const imageMarks: Record<string, string> = {
+  SQL: '/icons/sql.svg',
+  Blade: '/icons/blade.svg',
+  'HCL AppScan': '/icons/appscan.ico',
+  'Invicti (Netsparker)': '/icons/invicti.png',
+  OpenVAS: '/icons/openvas.ico',
+  Nmap: '/icons/nmap.png',
+  'Cisco Packet Tracer': '/icons/packet-tracer.ico',
+  GNS3: '/icons/gns3.svg',
+};
 ---
 <ul class="tech-stack" aria-label="Technologies used">
   {items.map(item => <li class="tech-badge">
     {marks[item] && <BrandIcon {...marks[item]} size={17} />}
+    {imageMarks[item] && <img class="brand-icon" src={imageMarks[item]} width="17" height="17" alt="" decoding="async" />}
     <span>{item}</span>
   </li>)}
 </ul>

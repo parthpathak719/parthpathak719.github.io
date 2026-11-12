@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import LightPillar from './LightPillar';
 import SplashCursor from './SplashCursor';
 
@@ -9,6 +9,16 @@ export default function PortfolioEffects() {
   const [mode, setMode] = useState({ active: false, cursor: false, mobile: false, available: false });
   const [paused, setPaused] = useState(false);
   const [ready, setReady] = useState(false);
+  const revealPage = useCallback(() => {
+    if (document.documentElement.hasAttribute('data-effects-ready')) return;
+    document.documentElement.setAttribute('data-effects-ready', '');
+    document.documentElement.classList.remove('effects-starting');
+    window.dispatchEvent(new Event('portfolio-background-ready'));
+  }, []);
+
+  useEffect(() => {
+    if (ready && (paused || !mode.active)) revealPage();
+  }, [ready, paused, mode.active, revealPage]);
 
   useEffect(() => {
     // Read before mounting either canvas, so paused pages never flash an effect.
@@ -56,6 +66,7 @@ export default function PortfolioEffects() {
           noiseIntensity={0.12} quality="low" detail={mode.mobile ? 2 : 3}
           resolution={mode.mobile ? 0.25 : 0.4} fade={0.2} interactive={false}
           clickPulse={false} intro={false}
+          onReady={revealPage}
         />}
       </div>
     </div>}

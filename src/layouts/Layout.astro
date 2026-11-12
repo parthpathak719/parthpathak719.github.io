@@ -17,8 +17,14 @@ const { title = 'Parth - Portfolio', description = 'Portfolio of Parth Pathak. W
             !matchMedia('(prefers-reduced-motion: reduce)').matches &&
             'IntersectionObserver' in window) {
           document.documentElement.classList.add('scroll-reveal-ready');
+          document.documentElement.classList.add('effects-starting');
           // Keep content available if the animation module cannot load.
           setTimeout(() => {
+            if (!document.documentElement.hasAttribute('data-effects-ready')) {
+              document.documentElement.setAttribute('data-effects-ready', '');
+              document.documentElement.classList.remove('effects-starting');
+              window.dispatchEvent(new Event('portfolio-background-ready'));
+            }
             if (!document.documentElement.hasAttribute('data-reveal-initialized')) {
               document.documentElement.classList.remove('scroll-reveal-ready');
             }
@@ -34,7 +40,7 @@ const { title = 'Parth - Portfolio', description = 'Portfolio of Parth Pathak. W
     <title>{title}</title>
   </head>
   <body>
-    <PortfolioEffects client:idle />
+    <PortfolioEffects client:load />
     <a class="skip-link" href="#main">Skip to content</a>
     <Nav />
     <slot />

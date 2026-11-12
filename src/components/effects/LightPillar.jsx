@@ -259,6 +259,7 @@ const LightPillar = ({
   resolution,
   lightMode = false,
   paused = false,
+  onReady,
   className = '',
   style
 }) => {
@@ -266,6 +267,8 @@ const LightPillar = ({
   const canvasRef = useRef(null);
   const wakeRef = useRef(null);
   const settingsRef = useRef(null);
+  const readyRef = useRef(onReady);
+  readyRef.current = onReady;
   const [generation, setGeneration] = useState(0);
   settingsRef.current = {
     topColor: String(topColor),
@@ -302,12 +305,18 @@ const LightPillar = ({
       stencil: false,
       powerPreference: 'high-performance'
     });
-    if (!container || !canvas || !gl) return undefined;
+    if (!container || !canvas || !gl) {
+      readyRef.current?.();
+      return undefined;
+    }
 
     const floatTargets = !!gl.getExtension('EXT_color_buffer_float');
     const marchProgram = link(gl, MARCH);
     const compositeProgram = link(gl, COMPOSITE);
-    if (!marchProgram || !compositeProgram) return undefined;
+    if (!marchProgram || !compositeProgram) {
+      readyRef.current?.();
+      return undefined;
+    }
 
     const onContextLost = event => {
       event.preventDefault();
@@ -578,6 +587,9 @@ const LightPillar = ({
     document.documentElement.addEventListener('pointerleave', onPointerLeave);
     document.addEventListener('visibilitychange', onVisibility);
     resize();
+    // resize() draws the first frame. Release the opening content with the
+    // next paint, once the GPU-backed background has been submitted.
+    const readyFrame = requestAnimationFrame(() => readyRef.current?.());
 
     wakeRef.current = () => {
       if (!raf) render();
@@ -585,6 +597,7 @@ const LightPillar = ({
     };
 
     return () => {
+      cancelAnimationFrame(readyFrame);
       cancelAnimationFrame(raf);
       wakeRef.current = null;
       canvas.removeEventListener('webglcontextlost', onContextLost);

@@ -1,7 +1,8 @@
 ---
 import { skillGroups } from '../data/skills';
+import TechStack from './TechStack.astro';
 ---
 <div class="toolkit">
   <h3>What I work with</h3>
-  <dl>{skillGroups.map(group => <div><dt>{group.title}</dt><dd>{group.items.join(' · ')}</dd></div>)}</dl>
+  <dl>{skillGroups.map(group => <div><dt>{group.title}</dt><dd><TechStack items={group.items} /></dd></div>)}</dl>
 </div>
