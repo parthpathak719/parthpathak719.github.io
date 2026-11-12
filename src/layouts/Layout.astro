@@ -1,57 +1,58 @@
 ---
-import "../styles/global.css";
-import Navbar from "../components/Navbar/NavBar.astro";
-const { hideNavbar = false } = Astro.props;
-import Footer from "../components/Footer/Footer.astro";
-import Background from "../components/UI/Background.astro";
-import "aos/dist/aos.css";
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import PortfolioEffects from '../components/effects/PortfolioEffects.jsx';
+const { title = 'Parth - Portfolio', description = 'Portfolio of Parth Pathak. Web development, multilingual AI, cloud systems, and application security. Computer science student.' } = Astro.props;
 ---
-
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>404: free time</title>
-	</head>
-	<body class="text-white">
-		<Background />
-		{!hideNavbar && <Navbar />}
-		<slot />
-		<Footer />
-
-		<style is:global>
-			html,
-			body {
-				overflow-x: hidden;
-			}
-			html {
-				font-family: system-ui, sans-serif;
-				scroll-behavior: smooth;
-			}
-
-			body {
-				margin: 0;
-				padding: 0;
-			}
-
-			@media (prefers-reduced-motion: reduce) {
-				html {
-					scroll-behavior: auto;
-				}
-			}
-		</style>
-
-		<script>
-			import AOS from "aos";
-			AOS.init({
-				duration: 2000,
-				easing: "ease-out-cubic",
-				once: true,
-				offset: 100,
-			});
-		</script>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#101114" />
+    <script is:inline>
+      try {
+        if (localStorage.getItem('parth-portfolio-effects') !== 'paused' &&
+            !matchMedia('(prefers-reduced-motion: reduce)').matches &&
+            'IntersectionObserver' in window) {
+          document.documentElement.classList.add('scroll-reveal-ready');
+          // Keep content available if the animation module cannot load.
+          setTimeout(() => {
+            if (!document.documentElement.hasAttribute('data-reveal-initialized')) {
+              document.documentElement.classList.remove('scroll-reveal-ready');
+            }
+          }, 4000);
+        }
+      } catch {}
+    </script>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <PortfolioEffects client:idle />
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Nav />
+    <slot />
+    <script>
+      import '../scripts/scrollReveal';
+      const navLinks = document.querySelectorAll<HTMLAnchorElement>('[data-section-link]');
+      if ('IntersectionObserver' in window) {
+        const sectionObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) navLinks.forEach((link) => {
+              const active = link.hash === '#' + entry.target.id;
+              link.classList.toggle('active', active);
+              if (active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current');
+            });
+          });
+        }, { rootMargin: '-15% 0px -65% 0px' });
+        document.querySelectorAll('main section[id]').forEach((section) => sectionObserver.observe(section));
+      }
+    </script>
+  </body>
 </html>

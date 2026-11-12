@@ -1,0 +1,25 @@
+---
+import logos from '@iconify-json/logos/icons.json';
+import simpleIcons from '@iconify-json/simple-icons/icons.json';
+import { randomUUID } from 'node:crypto';
+interface Props { name: string; collection?: 'logos' | 'simple'; size?: number; color?: string; }
+type IconData = { body: string; width?: number; height?: number };
+type Collection = { width?: number; height?: number; icons: Record<string, IconData> };
+const { name, collection = 'logos', size = 18, color } = Astro.props;
+const source = (collection === 'simple' ? simpleIcons : logos) as Collection;
+const icon = source.icons[name];
+if (!icon) throw new Error(`Unknown brand icon: ${collection}:${name}`);
+const width = icon.width ?? source.width ?? 24;
+const height = icon.height ?? source.height ?? 24;
+// Some brand SVGs use gradients; keep their IDs unique when a logo repeats.
+let body = icon.body;
+const instance = randomUUID();
+for (const match of icon.body.matchAll(/\bid="([^"]+)"/g)) {
+  const id = match[1];
+  const unique = `${id}-${instance}`;
+  body = body.replaceAll(`id="${id}"`, `id="${unique}"`)
+    .replaceAll(`url(#${id})`, `url(#${unique})`)
+    .replaceAll(`href="#${id}"`, `href="#${unique}"`);
+}
+---
+<svg class="brand-icon" data-brand={name} width={size} height={size} viewBox={`0 0 ${width} ${height}`} style={color ? `color:${color}` : undefined} aria-hidden="true" focusable="false" set:html={body} />

@@ -1,18 +1,46 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header/Header.astro";
-import StatsBanner from "../components/Banners/StatsBanner.astro";
-import About from "../components/About/About.astro";
-import Projects from "../components/Proyect/Projects.astro";
-import Blog from "../components/Blog/Blog.astro";
-import Contact from "../components/Contact/Contact.astro";
+import Layout from '../layouts/Layout.astro';
+import FeaturedProject from '../components/FeaturedProject.astro';
+import ProjectArchive from '../components/ProjectArchive.astro';
+import { projects } from '../data/projects';
+import { certificates } from '../data/credentials';
+import SocialLinks from '../components/SocialLinks.astro';
+import Credentials from '../components/Credentials.astro';
+import SecurityReport from '../components/SecurityReport.astro';
+import Skills from '../components/Skills.astro';
 ---
-
 <Layout>
-	<Header />
-	<StatsBanner />
-	<About />
-	<Projects />
-	<Blog />
-	<Contact />
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <p class="hero-intro">COMPUTER SCIENCE STUDENT</p>
+      <h1 id="hero-title">Parth Pathak<span>.</span></h1>
+      <p class="hero-lead">Full-stack development.<br/><span class="discipline-ai">AI</span><span class="lead-comma">, </span><span class="discipline-cloud">cloud</span><span class="lead-comma">, and </span><span class="discipline-security">security.</span></p>
+      <p class="hero-description">I’m a computer science student. I build web applications and work on AI, cloud infrastructure, and application security.</p>
+      <div class="hero-actions"><a class="project-cta" href="#projects">View projects</a><SocialLinks /></div>
+    </section>
+    <section class="about-section wrap section-space" id="about" aria-labelledby="about-title">
+      <div class="section-heading"><h2 id="about-title">A little about me</h2></div>
+      <div class="about-grid">
+      <div class="about-copy">
+        <p>I like working across the stack, from database queries to the details of an interface. My projects span multilingual NLP, browser-based developer tools, cloud scheduling, and network security. I enjoy connecting those pieces and turning an idea into something useful.</p>
+        <p>The Wizarding Opus is my favourite personal build. What began as a way to learn Laravel grew into a Harry Potter experience, with room to experiment with transitions, sound, and interactive features.</p>
+        <p>Outside of projects, I enjoy gaming, watching anime, and following cricket. When there’s time, I like getting in a game of badminton too. It’s a change of pace from working at a desk.</p>
+      </div>
+      <Skills /></div>
+      <Credentials />
+    </section>
+    <section class="work-section wrap section-space" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading"><h2 id="projects-title">Projects</h2><a class="quiet-link" href="/projects/">All {projects.length} projects <span aria-hidden="true">↗</span></a></div>
+      <div class="featured-grid">{projects.slice(0, 4).map((project, index) => <FeaturedProject project={project} index={index} />)}</div>
+      <details class="more-work"><summary>More projects <span class="more-count">{String(projects.length - 4).padStart(2, '0')}</span><span class="expand-sign" aria-hidden="true">+</span></summary><div class="more-work-content"><ProjectArchive /></div></details>
+    </section>
+    <section class="experience-section wrap section-space" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading"><h2 id="experience-title">Experience</h2></div>
+      <article class="experience-row"><div class="experience-time">Dec 2025 to Jan 2026</div><div class="experience-body"><h3>Application &amp; Network Security Intern</h3><p class="organization">National Informatics Centre <span>Ministry of Electronics & IT</span></p><p>Tested a deliberately vulnerable banking application using Burp Suite. Documented XSS, SQL injection authentication bypass, weak credentials, and information disclosure with reproduction steps and screenshots.</p><p>Practiced Nmap reconnaissance, Wireshark traffic analysis, session and CSRF checks, and Snort fundamentals.</p><a class="certificate-link" href={certificates.securityInternship} target="_blank" rel="noopener noreferrer">View Certificate <span aria-hidden="true">↗</span></a></div></article>
+      <article class="experience-row"><div class="experience-time">May to Jun 2025</div><div class="experience-body"><h3>Web Development Intern</h3><p class="organization">National Informatics Centre <span>Ministry of Electronics & IT</span></p><p>Contributed to Vidyakosh, NIC’s internal training management portal. Built profile features for online and residential training records using Laravel, PHP, MySQL, and Blade, and debugged issues across the frontend and backend.</p><a class="certificate-link" href={certificates.webInternship} target="_blank" rel="noopener noreferrer">View Certificate <span aria-hidden="true">↗</span></a></div></article>
+    </section>
+
+    <SecurityReport />
+    <section class="contact-section wrap section-space" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">Get in touch.</h2><p>For opportunities, projects, or a conversation about something I’ve built.</p><SocialLinks /></section>
+  </main>
 </Layout>

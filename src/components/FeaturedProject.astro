@@ -1,0 +1,15 @@
+---
+import Icon from './Icon.astro';
+import TechStack from './TechStack.astro';
+import type { Project } from '../data/projects';
+interface Props { project: Project; index: number }
+const { project, index } = Astro.props;
+---
+<article class:list={['featured-project', `project-${project.id}`]}>
+  <div class="project-topline"><span>{project.kind}</span><span class="project-number">0{index + 1}</span></div>
+  <h3>{project.title}</h3>
+  <p class="project-description">{project.description}</p>
+  <TechStack items={project.stack} />
+  <details class="project-details"><summary>Details <span class="expand-sign" aria-hidden="true">+</span></summary><div class="detail-content"><p>{project.detail}</p>{project.note && <p class="project-note">{project.note}</p>}</div></details>
+  <div class="project-links"><a href={`https://github.com/parthpathak719/${project.repo}`} target="_blank" rel="noopener noreferrer"><Icon name="github" />Source <span aria-hidden="true">↗</span></a>{project.live && <a href={project.live} target="_blank" rel="noopener noreferrer">Live project <span aria-hidden="true">↗</span></a>}</div>
+</article>

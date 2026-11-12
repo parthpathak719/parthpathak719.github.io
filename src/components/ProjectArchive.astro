@@ -1,0 +1,41 @@
+---
+import Icon from './Icon.astro';
+import TechStack from './TechStack.astro';
+import { projects, categories } from '../data/projects';
+const { full = false } = Astro.props;
+const entries = full ? projects : projects.slice(4);
+const availableCategories = categories.filter((category) => category === 'All work' || entries.some((project) => project.category === category));
+---
+<div class="archive" data-project-browser>
+  <div class="filter-bar"><div class="project-filters" role="group" aria-label="Filter projects by discipline">{availableCategories.map((category, index) => <button type="button" data-filter={category} aria-pressed={index === 0 ? 'true' : 'false'}>{category}</button>)}</div><span class="filter-count" aria-live="polite"><span data-project-count>{entries.length}</span> <span data-project-noun>projects</span></span></div>
+  <div class="archive-list">
+    {entries.map((project) => <article class="archive-row" data-category={project.category}>
+      <details>
+        <summary><span class="archive-index">{String(projects.indexOf(project) + 1).padStart(2, '0')}</span><span class="archive-name"><strong>{project.title}</strong><span>{project.kind}</span></span><span class="archive-category">{project.category}</span><span class="archive-expand" aria-hidden="true">+</span></summary>
+        <div class="archive-content"><p>{project.description}</p><p>{project.detail}</p>{project.note && <p class="project-note">{project.note}</p>}<TechStack items={project.stack} /><div class="project-links">{project.repo ? <a href={`https://github.com/parthpathak719/${project.repo}`} target="_blank" rel="noopener noreferrer"><Icon name="github" />Source code <span aria-hidden="true">↗</span></a> : <span class="private-label">Private repository</span>}{project.live && <a href={project.live} target="_blank" rel="noopener noreferrer">Visit project <span aria-hidden="true">↗</span></a>}</div></div>
+      </details>
+    </article>)}
+  </div>
+  <p class="filter-empty" hidden>No projects in this selection. Try another discipline.</p>
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-project-browser]').forEach((browser) => {
+    const buttons = browser.querySelectorAll<HTMLButtonElement>('[data-filter]');
+    const rows = browser.querySelectorAll<HTMLElement>('[data-category]');
+    buttons.forEach((button) => button.addEventListener('click', () => {
+      const selected = button.dataset.filter;
+      buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+      let count = 0;
+      rows.forEach((row) => {
+        row.hidden = selected !== 'All work' && row.dataset.category !== selected;
+        if (!row.hidden) count++;
+      });
+      const counter = browser.querySelector('[data-project-count]');
+      if (counter) counter.textContent = String(count);
+      const noun = browser.querySelector('[data-project-noun]');
+      if (noun) noun.textContent = count === 1 ? 'project' : 'projects';
+      const empty = browser.querySelector<HTMLElement>('.filter-empty');
+      if (empty) empty.hidden = count !== 0;
+    }));
+  });
+</script>

@@ -1,17 +1,8 @@
 ---
-import { Icon } from "astro-icon/components";
-import CardProyect from "../components/Proyect/CardProyect.astro";
-import Section from "../components/UI/Section.astro";
-import Layout from "../layouts/Layout.astro";
-import { ALL_PROJECTS } from "../data/projects";
+import Layout from '../layouts/Layout.astro';
+import ProjectArchive from '../components/ProjectArchive.astro';
+import { projects } from '../data/projects';
 ---
-
-<Layout hideNavbar={true} title="All Projects — Parth Pathak">
-    <main class="max-w-7xl mx-auto px-4 py-0">
-        <Section id="all-projects" title="Projects" titleClassName="mb-24">
-            <div class="flex flex-col gap-y-32">
-                {ALL_PROJECTS.map((project) => <CardProyect {...project} />)}
-            </div>
-        </Section>
-    </main>
+<Layout title="Projects - Parth - Portfolio" description={`Explore ${projects.length} projects by Parth Pathak, from multilingual NLP and browser developer tools to cloud scheduling, network security, and algorithms.`}>
+  <main id="main" class="wrap project-index section-space"><a class="text-link" href="/#projects">← Back to projects</a><p class="eyebrow section-label">{projects.length} PROJECTS</p><h1>Project index<span class="accent">.</span></h1><p class="index-intro">Projects, assignments, and experiments. Select a category or open a project for details.</p><ProjectArchive full /><p class="index-footnote">Ordered by personal priority.</p></main>
 </Layout>

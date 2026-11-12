@@ -1,0 +1,7 @@
+---
+import { skillGroups } from '../data/skills';
+---
+<div class="toolkit">
+  <h3>What I work with</h3>
+  <dl>{skillGroups.map(group => <div><dt>{group.title}</dt><dd>{group.items.join(' · ')}</dd></div>)}</dl>
+</div>

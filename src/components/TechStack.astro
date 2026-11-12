@@ -1,0 +1,63 @@
+---
+import BrandIcon from './BrandIcon.astro';
+interface Props { items: string[]; }
+const { items } = Astro.props;
+type Mark = { name: string; collection?: 'logos' | 'simple'; color?: string };
+// Only use a mark for the named technology. Unbranded concepts stay text-only.
+const marks: Record<string, Mark> = {
+  Python: { name: 'python' },
+  FastAPI: { name: 'fastapi-icon' },
+  React: { name: 'react' },
+  AWS: { name: 'amazonwebservices', collection: 'simple', color: '#ffac43' },
+  Docker: { name: 'docker-icon' },
+  Flask: { name: 'flask', collection: 'simple', color: '#f0f4ff' },
+  Laravel: { name: 'laravel' },
+  PostgreSQL: { name: 'postgresql' },
+  JavaScript: { name: 'javascript' },
+  Streamlit: { name: 'streamlit' },
+  Gemini: { name: 'google-gemini-icon' },
+  GraphQL: { name: 'graphql' },
+  'scikit-learn': { name: 'scikitlearn', collection: 'simple', color: '#f6ad62' },
+  Transformers: { name: 'hugging-face-icon' },
+  PyTorch: { name: 'pytorch-icon' },
+  Gradio: { name: 'gradio-icon' },
+  'Cisco IOSv': { name: 'cisco', collection: 'simple', color: '#54b9e9' },
+  Java: { name: 'java' },
+  pandas: { name: 'pandas', collection: 'simple', color: '#b6acff' },
+  Matplotlib: { name: 'matplotlib-icon' },
+  "PHP": {"name": "php"},
+  "HTML": {"name": "html-5"},
+  "CSS": {"name": "css-3"},
+  "TypeScript": {"name": "typescript-icon"},
+  "Vite": {"name": "vite-icon"},
+  "Tailwind CSS": {"name": "tailwindcss-icon"},
+  "NumPy": {"name": "numpy"},
+  "SciPy": {"name": "scipy", "collection": "simple", "color": "#8fb3f1"},
+  "D3.js": {"name": "d3"},
+  "Groq": {"name": "groq"},
+  "Ollama": {"name": "ollama", "collection": "simple", "color": "#ecf1ff"},
+  "Supabase": {"name": "supabase-icon"},
+  "Render": {"name": "render", "collection": "simple", "color": "#e5eaff"},
+  "Cloudinary": {"name": "cloudinary-icon"},
+  "Bunny.net": {"name": "bunny-net-icon"},
+  "XAMPP": {"name": "xampp"},
+  "Gunicorn": {"name": "gunicorn"},
+  "Amazon EC2": {"name": "aws-ec2"},
+  "Amazon SQS": {"name": "aws-sqs"},
+  "AWS Lambda": {"name": "aws-lambda"},
+  "Amazon DynamoDB": {"name": "aws-dynamodb"},
+  "AWS SSM": {"name": "aws-systems-manager"},
+  "Amazon EventBridge": {"name": "aws-eventbridge"},
+  "Node.js": {"name": "nodejs-icon"},
+  "Docker Compose": {"name": "docker-icon"},
+  "Google GenAI SDK": {"name": "google-gemini-icon"},
+  "Monday.com": {"name": "monday-icon"},
+  "Streamlit Community Cloud": {"name": "streamlit"},
+};
+---
+<ul class="tech-stack" aria-label="Technologies used">
+  {items.map(item => <li class="tech-badge">
+    {marks[item] && <BrandIcon {...marks[item]} size={17} />}
+    <span>{item}</span>
+  </li>)}
+</ul>

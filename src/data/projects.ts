@@ -1,170 +1,91 @@
-export const TAGS = {
-    PHP: {
-        name: "PHP",
-        class: "bg-[#777bb3]/20 text-[#aeb2d5]",
-        icon: "logos:php",
-    },
-    LARAVEL: {
-        name: "Laravel",
-        class: "bg-[#ff2d20]/20 text-[#ff6b60]",
-        icon: "logos:laravel",
-    },
-    BLADE: {
-        name: "Blade",
-        class: "bg-gray-700/20 text-gray-300",
-        icon: "lucide:file-code",
-    },
-    POSTGRESQL: {
-        name: "PostgreSQL",
-        class: "bg-[#336791]/20 text-[#5b9bd5]",
-        icon: "logos:postgresql",
-    },
-    CSS: {
-        name: "CSS3",
-        class: "bg-[#264de4]/20 text-[#5c85ff]",
-        icon: "logos:css-3",
-    },
-    JS: {
-        name: "JavaScript",
-        class: "bg-[#f7df1e]/20 text-[#f7df1e]",
-        icon: "logos:javascript",
-    },
-    XAMPP: {
-        name: "XAMPP",
-        class: "bg-[#fb7a24]/20 text-[#ff9b4a]",
-        icon: "simple-icons:xampp",
-    },
-    CLOUDINARY: {
-        name: "Cloudinary",
-        class: "bg-[#3448c5]/20 text-[#6c7cff]",
-        icon: "simple-icons:cloudinary",
-    },
-    BUNNY: {
-        name: "Bunny.net",
-        class: "bg-[#ff6600]/20 text-[#ff8c42]",
-        icon: "lucide:video",
-    },
-    RENDER: {
-        name: "Render",
-        class: "bg-[#46e3b7]/20 text-[#46e3b7]",
-        icon: "simple-icons:render",
-    },
-    GEMINI: {
-        name: "Gemini",
-        class: "bg-[#8e44ad]/20 text-[#c084fc]",
-        icon: "lucide:sparkles",
-    },
-    PYTHON: {
-        name: "Python",
-        class: "bg-[#3776AB]/20 text-[#4ea1ff]",
-        icon: "logos:python",
-    },
-    STREAMLIT: {
-        name: "Streamlit",
-        class: "bg-[#ff4b4b]/20 text-[#ff7a7a]",
-        icon: "simple-icons:streamlit",
-    },
-    HUGGINGFACE: {
-        name: "HuggingFace",
-        class: "bg-[#ffcc00]/20 text-[#ffd84d]",
-        icon: "simple-icons:huggingface",
-    },
-    PYTORCH: {
-        name: "PyTorch",
-        class: "bg-[#ee4c2c]/20 text-[#ff7a59]",
-        icon: "logos:pytorch",
-    },
-    SM2: {
-        name: "SM-2 Algorithm",
-        class: "bg-gray-600/20 text-gray-300",
-        icon: "lucide:brain",
-    },
-    NUMPY: {
-        name: "NumPy",
-        class: "bg-[#013243]/20 text-[#4dabf7]",
-        icon: "simple-icons:numpy",
-    },
-    TRIMESH: {
-        name: "Trimesh",
-        class: "bg-gray-600/20 text-gray-300",
-        icon: "lucide:box",
-    },
-    SCIKIT: {
-        name: "Scikit-learn",
-        class: "bg-[#f7931e]/20 text-[#ffb347]",
-        icon: "simple-icons:scikitlearn",
-    },
-    MATPLOTLIB: {
-        name: "Matplotlib",
-        class: "bg-[#11557c]/20 text-[#4ea1ff]",
-        icon: "lucide:line-chart",
-    },
-    GRADIO: {
-        name: "Gradio",
-        class: "bg-[#ff4b4b]/20 text-[#ff7a7a]",
-        icon: "simple-icons:gradio",
-    },
-    GNS3: {
-        name: "GNS3",
-        class: "bg-[#1da462]/20 text-[#4dbb84]",
-        icon: "mdi:router-network",
-    },
-    CISCO: {
-        name: "Cisco IOSv",
-        class: "bg-[#1ba0d7]/20 text-[#49c0f0]",
-        icon: "simple-icons:cisco",
-    },
-    OSPF: {
-        name: "OSPF",
-        class: "bg-gray-600/20 text-gray-300",
-        icon: "lucide:network",
-    },
-    ISPF: {
-        name: "iSPF",
-        class: "bg-gray-600/20 text-gray-300",
-        icon: "lucide:git-branch",
-    },
-};
+export interface Project {
+  id: string;
+  title: string;
+  category: 'AI & ML' | 'Web & applications' | 'Cloud & systems' | 'Security & networks' | 'Algorithms';
+  kind: string;
+  description: string;
+  stack: string[];
+  repo?: string;
+  live?: string;
+  detail: string;
+  note?: string;
+}
 
-export const PROJECTS = [
-    {
-        title: "🧙‍♂️ The Wizarding Opus",
-        description: [
-            "A cinematic, full-stack web experience inspired by the magical world of Harry Potter because why build a boring project when you can build one with Hogwarts archives, character records, and magical animations? Built on Laravel using PHP and XAMPP with a Blade + CSS3 + JavaScript frontend, PostgreSQL database hosted on Supabase, and AI-generated visuals powered by GeminiPro. Media is streamed via Bunny.net CDN, images managed through Cloudinary, and the whole app is deployed on Render. but sadly, the hosted version lags a lot coz this has audios and videos. But hey, at least I can give the source code.",
-            "Atleast that's what I used to say until last year when I could not find a hosting platform that can help with audios and videos... but this year I finally found Bunny.net.",
-            "Oh and did I mention this took 3 months to finish? And an extra 1 month to try to deploy it? Not because it's complicated (okay, it is), but because college decided that 5th semester was the perfect time to be absolutely unhinged with the workload. Somehow, between assignments, exams, and questioning my life choices, I still shipped it and it turned out to be the biggest personal project I've ever built. Equal parts web dev practice and an excuse to spend way too much time on Harry Potter lore.",
-        ],
-        link: "https://the-wizarding-opus.onrender.com/",
-        github: "https://github.com/parthpathak719/The-Wizarding-Opus",
-        image: "/projects/hogwarts.jpg",
-        tags: [TAGS.PHP, TAGS.LARAVEL, TAGS.BLADE, TAGS.CSS, TAGS.JS, TAGS.POSTGRESQL, TAGS.XAMPP, TAGS.CLOUDINARY, TAGS.BUNNY, TAGS.RENDER, TAGS.GEMINI],
-    },
-    {
-        title: "📘 StudyBot++ — SmartStudy Engine",
-        description:
-            "An NLP-powered study assistant built as a college project that combines T5 for question generation, BART for summarization, and the SM-2 spaced repetition algorithm all in one place. Because manually making flashcards and figuring out when to review them is a 2010 problem. Built with Python, Streamlit, and HuggingFace Transformers. Team project, but still counts.",
-        link: "https://studybot-nlp.streamlit.app/",
-        github: "https://github.com/parthpathak719/StudyBot",
-        image: "/projects/studybot.jpg",
-        tags: [TAGS.PYTHON, TAGS.STREAMLIT, TAGS.HUGGINGFACE, TAGS.PYTORCH, TAGS.SM2],
-    },
-    {
-        title: "🌐 OSPF/ISPF Network Simulation",
-        description:
-            "Built a GNS3 lab to settle an argument nobody asked for - does iSPF actually beat traditional OSPF? Turns out it does. Set up two identical 5-router networks with real Cisco IOSv images, broke things in three different ways, and measured who recovered faster. The best part was Scenario 3, where iSPF looked at a link cost change, decided it wasn't its problem, and did absolutely nothing - while OSPF panicked and ran a full Dijkstra for no reason. Walked into the presentation with full confidence, explained every single detail, even picked the topic from our professor's own suggestions. She cut marks anyway. The routers performed flawlessly. The grading did not.",
-        github: "https://github.com/parthpathak719/OSPF-ISPF-Network-Simulation",
-        image: "/projects/ospf.jpg",
-        tags: [TAGS.GNS3, TAGS.CISCO, TAGS.OSPF, TAGS.ISPF],
-    },
-    {
-        title: "🧊 3D Object Classification using PointNet & PointNet++",
-        description:
-            "A deep learning project that implements and compares PointNet and PointNet++ for classifying 3D objects from raw point cloud data — no voxelization, no shortcuts. Trained on ModelNet10 across 10 object categories, with PointNet++ hitting 86.38% accuracy by actually paying attention to local geometry. Wrapped it up with a Gradio web interface so you can drop in a .off file and get a real-time classification. College project, but the results were genuinely satisfying.",
-        github: "https://github.com/parthpathak719/3D-Object-Classification-On-ModelNet10",
-        image: "/projects/deeplearning.png",
-        tags: [TAGS.PYTHON, TAGS.PYTORCH, TAGS.NUMPY, TAGS.TRIMESH, TAGS.SCIKIT, TAGS.MATPLOTLIB, TAGS.GRADIO],
-    },
+export const projects: Project[] = [
+  {
+    id: 'lexora', title: 'Lexora', category: 'AI & ML', kind: 'Final year project',
+    description: 'Multilingual AI text detection and model-family attribution using fine-tuned MuRIL and character n-grams.',
+    stack: ["Python", "FastAPI", "JavaScript", "HTML", "CSS", "MuRIL", "Transformers", "PyTorch", "scikit-learn", "NumPy", "SciPy", "Character n-grams", "TF-IDF", "Logistic regression"], repo: 'AI-Detector',
+    detail: 'Fine-tuned MuRIL embeddings combined with character n-grams and calibrated logistic regression. Five source-grouped folds guided model selection. Separate held-out short-text tasks achieved 93.87% detection, 86.43% family attribution, and 95.74% code-mixed detection accuracy. The app accepts six document formats and generates per-segment PDF reports.',
+    note: 'Research scores are separate short-text task results, not proof of authorship or measured long-document accuracy.',
+  },
+  {
+    id: 'pyglide', title: 'PyGlide', category: 'Web & applications', kind: 'Final year project',
+    description: 'A browser-based Python IDE with interactive execution, semantic bug retrieval, and AI-assisted root cause analysis.',
+    stack: ["React", "Vite", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS", "Monaco", "Pyodide", "Python", "FastAPI", "NumPy", "pandas", "D3.js", "Groq", "Ollama", "Sarvam AI", "Supabase", "Render"], repo: 'PyGlide', live: 'https://pyglide-web.onrender.com/',
+    detail: 'Interactive Python runs in the browser with multi-file workspaces, autocomplete, input support, and a stoppable runtime. AST and traceback parsing provide source context; cosine-similarity retrieval finds related historical bugs. Groq or Ollama provides explanations, with deterministic fallback and optional Sarvam translation. Hosted on Render with Supabase persistence for shared-example deletion records.',
+  },
+  {
+    id: 'cloudpulse', title: 'CloudPulse', category: 'Cloud & systems', kind: 'Cloud computing project',
+    description: 'An AWS resource scheduler where autonomous agents bid for CPU across four Dockerized microservices.',
+    stack: ["Python", "Flask", "Docker", "AWS", "Amazon EC2", "Amazon SQS", "AWS Lambda", "Amazon DynamoDB", "AWS SSM", "Amazon EventBridge", "Groq", "Llama 3", "HTML", "CSS", "JavaScript", "NumPy"], repo: 'CloudPulse',
+    detail: 'Four Flask microservices compete for capacity on two EC2 compute nodes. Agents send bids through SQS; a Lambda scheduler ranks demand, splits capacity or defers services, persists allocation state in DynamoDB, and reconciles containers through SSM. A live dashboard shows allocations and Groq-generated reasoning, alongside a rule-based fallback.',
+  },
+  {
+    id: 'wizarding', title: 'The Wizarding Opus', category: 'Web & applications', kind: 'Personal project · a favourite',
+    description: 'A Harry Potter web experience built with Laravel, featuring cinematic transitions, a sorcerer archive, and an interactive quiz.',
+    stack: ["Laravel", "PHP", "Blade", "HTML", "CSS", "JavaScript", "PostgreSQL", "Supabase", "Gemini", "Cloudinary", "Bunny.net", "Render", "XAMPP"], repo: 'The-Wizarding-Opus', live: 'https://the-wizarding-opus.onrender.com/',
+    detail: 'A full-stack Laravel experience with custom animation, audio and video transitions, a scored quiz, and CRUD for sorcerer records. Session-based ownership limits editing to a visitor’s own creations; an admin flow manages records. Render hosts the app, Supabase hosts PostgreSQL, and Bunny.net and Cloudinary deliver media.',
+  },
+  {
+    id: 'skylark', title: 'Skylark Drones BI Agent', category: 'AI & ML', kind: 'Placement assignment',
+    description: 'A conversational business intelligence assistant that connects sales and operations using live Monday.com board data.',
+    stack: ["Python", "Streamlit", "Gemini", "Monday.com", "GraphQL", "Streamlit Community Cloud"], repo: 'Skylark-Drones-Assignment', live: 'https://monday-bia.streamlit.app/',
+    detail: 'Gemini function calling selects read-only tools for Work Orders and Deals. A dedicated cleaning layer normalizes client codes, handles malformed numbers and missing values, detects leaked header rows, and computes financial totals in Python before the model explains them. Configured for Streamlit Community Cloud.',
+  },
+  {
+    id: 'iot-ids', title: 'IoT Network IDS', category: 'Security & networks', kind: 'Network security project',
+    description: 'A local IoT traffic lab with hybrid anomaly detection, live monitoring, and generated threat reports.',
+    stack: ["Python", "Flask", "scikit-learn", "NumPy", "pandas", "Isolation Forest", "MLP classifier", "TLS", "DTLS simulation", "UDP", "Sockets", "OpenSSL", "SSL certificates"], repo: 'IoT-Network-IDS',
+    detail: 'Combines an Isolation Forest with an MLP classifier to identify normal traffic, known synthetic patterns, and uncertain anomalies using payload size and timing. Includes TLS traffic, plain-UDP simulated DTLS traffic, attack generators, CSV logging, and a Flask dashboard.',
+    note: 'Attack payloads are simulations, not real Heartbleed or POODLE exploits. DTLS is simulated, and training-set metrics do not establish real-world detection performance.',
+  },
+  {
+    id: 'studybot', title: 'StudyBot++', category: 'AI & ML', kind: 'NLP project',
+    description: 'Turning study material into questions, summaries, and a review schedule that adapts to recall.',
+    stack: ["Python", "Streamlit", "Transformers", "PyTorch", "T5", "DistilBART", "SM-2", "pandas", "Matplotlib"], repo: 'StudyBot', live: 'https://studybot-nlp.streamlit.app/',
+    detail: 'Combines T5-based question generation, DistilBART summarization, and SM-2 spaced repetition. Tracks due reviews and learning progress, with keyword and summary-overlap answer scoring and template fallbacks when model generation is unavailable.',
+  },
+  {
+    id: 'ospf', title: 'OSPF / iSPF Simulation', category: 'Security & networks', kind: 'Computer networks project',
+    description: 'Two parallel router topologies. Three failure scenarios. A practical comparison of full and incremental shortest-path recomputation.',
+    stack: ["GNS3", "Cisco IOSv", "VMware Workstation Pro", "OSPF", "iSPF"], repo: 'OSPF-iSPF-Network-Simulation',
+    detail: 'Configured two five-router, multi-area networks with Cisco IOSv in GNS3. Compared SPF calculation time and CPU behavior during link failures, router failures, and link-cost changes. The repository includes topology configuration, packet captures, and recorded results.',
+  },
+  {
+    id: 'cyberhack', title: 'ARP Guardian', category: 'Security & networks', kind: 'Cyber hackathon',
+    description: 'Watching for ARP poisoning, then connecting detection to an automated quarantine workflow.',
+    stack: ["Python", "Scapy", "Flask", "Node.js", "HTML", "CSS", "JavaScript", "Canvas", "Docker", "Docker Compose", "SNMP", "pysnmp", "Wireshark", "tcpdump"], repo: 'CyberHack',
+    detail: 'An ARP monitoring daemon checks MAC changes, flapping, gateway impersonation, gratuitous floods, storms, and duplicate IPs. Integrates a simulated switch API or SNMP control path for VLAN quarantine, a Docker LAN lab, and a live dashboard. Documents MITRE ATT&CK T1557.002 and detection limitations.',
+  },
+  {
+    id: 'pointnet', title: '3D Object Classification', category: 'AI & ML', kind: 'Deep learning project',
+    description: 'Comparing PointNet and PointNet++ for classification of raw 3D point clouds from ModelNet10.',
+    stack: ["Python", "PyTorch", "NumPy", "Trimesh", "scikit-learn", "Matplotlib", "Gradio", "PointNet", "PointNet++", "ModelNet10"], repo: '3D-Object-Classification-On-ModelNet10',
+    detail: 'Classifies ten ModelNet10 object categories from sampled point clouds without voxelization. Compares PointNet’s global representation against PointNet++’s hierarchical local features. Reported validation accuracy is 80.36% and 86.38% respectively, with a Gradio interface for .off files.',
+  },
+  {
+    id: 'heist', title: 'Museum Heist', category: 'Algorithms', kind: 'AI case study',
+    description: 'A grid-world AI case study comparing Minimax, Alpha-Beta pruning, greedy search, and guard coordination.',
+    stack: ["Python", "NumPy", "Matplotlib", "Minimax", "Alpha-beta", "BFS"], repo: 'FAI-Case-Study',
+    detail: 'A grid-world case study comparing depth-limited Minimax, Alpha-Beta pruning, a greedy baseline, and coordinated versus independent guards. BFS distances inform the evaluation function. Reproducible experiments include random maps, depth sweeps, a horizon-effect case, search-tree diagrams, and animated games.',
+  },
+  {
+    id: 'ml-lab', title: 'Machine Learning Lab', category: 'AI & ML', kind: '10 lab assignments',
+    description: 'The foundations, explored hands-on: data preparation, model experiments, evaluation, and visualization.',
+    stack: ["Python", "pandas", "NumPy", "scikit-learn", "Matplotlib", "Seaborn", "CatBoost", "Random Forest", "Hyperparameter tuning"], repo: 'ml_lab',
+    detail: 'Ten lab folders containing 61 Python scripts and supporting datasets. Exercises include data analysis, classification, feature correlation, ensemble methods, and cross-validated hyperparameter search.',
+  },
 ];
 
-export const FEATURED_PROJECTS = PROJECTS.slice(0, 2);
-export const ALL_PROJECTS = PROJECTS;
+export const categories = ['All work', 'AI & ML', 'Web & applications', 'Cloud & systems', 'Security & networks', 'Algorithms'] as const;

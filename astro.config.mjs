@@ -1,9 +1,9 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
-import icon from 'astro-icon';
+import react from '@astrojs/react';
 
 export default defineConfig({
+  integrations: [react()],
   site: "https://parthpathak719.github.io",
   base: "/", 
 
@@ -11,9 +11,9 @@ export default defineConfig({
     enabled: false
   },
 
-  integrations: [icon()],
-
+  trailingSlash: 'always',
+  // Keep production optimization from replacing the dev JSX runtime cache.
   vite: {
-    plugins: [tailwindcss()]
-  }
+    cacheDir: process.argv.includes('build') ? 'node_modules/.vite-build' : 'node_modules/.vite-dev',
+  },
 });
