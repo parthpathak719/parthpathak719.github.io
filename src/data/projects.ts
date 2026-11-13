@@ -57,6 +57,12 @@ export const projects: Project[] = [
     detail: 'Combines T5-based question generation, DistilBART summarization, and SM-2 spaced repetition. Tracks due reviews and learning progress, with keyword and summary-overlap answer scoring and template fallbacks when model generation is unavailable.',
   },
   {
+    id: 'portfolio', title: 'My Portfolio', category: 'Web & applications', kind: 'Personal project',
+    description: 'The portfolio you’re browsing, showcasing my projects, technical skills, internship experience, and credentials.',
+    stack: ['Astro', 'React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'WebGL', 'GitHub Pages'], repo: 'parthpathak719.github.io', live: 'https://parthpathak719.github.io/',
+    detail: 'Built with Astro and React, with animated light pillars, a fluid cursor, and scroll reveals. Includes filterable projects, expandable internship details with reports, and linked credentials. Responsive layouts and a persistent effects toggle keep the experience comfortable across devices.',
+  },
+  {
     id: 'ospf', title: 'OSPF / iSPF Simulation', category: 'Security & networks', kind: 'Computer networks project',
     description: 'Two parallel router topologies. Three failure scenarios. A practical comparison of full and incremental shortest-path recomputation.',
     stack: ["GNS3", "Cisco IOSv", "VMware Workstation Pro", "OSPF", "iSPF"], repo: 'OSPF-iSPF-Network-Simulation',

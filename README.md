@@ -1,10 +1,10 @@
 # ✨ My Portfolio
 
-My official portfolio brings together the things I build, the skills I work with, and the experience behind them. It offers a look at my interests across web development, AI, cloud systems, and cybersecurity, with space to explore the work in more detail. A clean interface, thoughtful interactions, and a little personality tie it all together.
+My portfolio presents my projects, technical skills, and internship experience across web development, AI, cloud systems, and cybersecurity. Designed for recruiters and collaborators, it brings together work samples, technical details, reports, and verified credentials in a clear, accessible interface. This repository contains the source for the portfolio website itself.
 
 ## 🧭 Explore
 
-- 👋 **About:** A personal introduction, interests, and categorized skills.
+- 👋 **About:** An introduction to my work, interests, and categorized skills.
 - 🛠️ **Projects:** Featured work and a filterable archive with technical details, source code, and live demos where available.
 - 💼 **Experience:** Internship summaries with expandable details, certificates, and reports.
 - 🎓 **Courses & credentials:** Certifications with verification links.

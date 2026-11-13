@@ -5,6 +5,8 @@ const { items } = Astro.props;
 type Mark = { name: string; collection?: 'logos' | 'simple'; color?: string };
 // Only use a mark for the named technology. Unbranded concepts stay text-only.
 const marks: Record<string, Mark> = {
+  Astro: { name: 'astro-icon' },
+  'GitHub Pages': { name: 'github', collection: 'simple', color: '#bca6ff' },
   Python: { name: 'python' },
   C: { name: 'c' },
   FastAPI: { name: 'fastapi-icon' },
@@ -17,6 +19,7 @@ const marks: Record<string, Mark> = {
   MySQL: { name: 'mysql' },
   SQLite: { name: 'sqlite' },
   Git: { name: 'git-icon' },
+  GitHub: { name: 'github', collection: 'simple', color: '#e5eaff' },
   Linux: { name: 'linux-tux' },
   VMware: { name: 'vmware' },
   'Burp Suite': { name: 'burpsuite', collection: 'simple', color: '#ff916c' },

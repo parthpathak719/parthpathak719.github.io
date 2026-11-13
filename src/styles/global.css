@@ -60,9 +60,10 @@ main { position: relative; z-index: 1; }
 .hero { padding-top: 110px; padding-bottom: 100px; position: relative; }
 .hero-intro { font-size: 12px; letter-spacing: 2.2px; color: #93a1b2; font-weight: 650; margin-bottom: 27px; }
 .hero h1 { color: #f1f3f5; font-size: clamp(60px, 7.8vw, 100px); font-weight: 600; letter-spacing: -6px; line-height: 1.08; }
-.hero h1 > span { color: #91abc5; }
+.hero h1 > span { color: #82abff; }
 .hero-lead { font-family: var(--display); font-size: clamp(29px, 3.7vw, 44px); line-height: 1.35; letter-spacing: -1.7px; color: #d2d8e1; margin-top: 29px; }
-.hero-lead .discipline-ai, .hero-lead .discipline-cloud, .hero-lead .discipline-security, .hero-lead .lead-comma { color: #a0b8d0; }
+.hero-lead .discipline-ai, .hero-lead .discipline-cloud, .hero-lead .discipline-security { color: #82abff; }
+.hero-lead .lead-comma { color: #d2d8e1; }
 .hero-description { color: #acb8c8; font-size: 17px; line-height: 1.95; max-width: 565px; margin-top: 25px; }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 24px 32px; margin-top: 32px; }
 .social-links { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
