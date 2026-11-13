@@ -13,7 +13,7 @@ const { title = 'Parth - Portfolio', description = 'Portfolio of Parth Pathak. W
     <meta name="theme-color" content="#100b19" />
     <script is:inline>
       try {
-        if (localStorage.getItem('parth-portfolio-effects') !== 'paused' &&
+        if (sessionStorage.getItem('parth-portfolio-effects') !== 'paused' &&
             !matchMedia('(prefers-reduced-motion: reduce)').matches &&
             'IntersectionObserver' in window) {
           document.documentElement.classList.add('scroll-reveal-ready');

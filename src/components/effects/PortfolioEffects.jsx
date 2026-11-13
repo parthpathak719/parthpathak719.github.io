@@ -21,8 +21,9 @@ export default function PortfolioEffects() {
   }, [ready, paused, mode.active, revealPage]);
 
   useEffect(() => {
+    // Keep the choice across pages in this tab, without carrying it into a new visit.
     // Read before mounting either canvas, so paused pages never flash an effect.
-    try { setPaused(localStorage.getItem(PREFERENCE_KEY) === 'paused'); } catch {}
+    try { setPaused(sessionStorage.getItem(PREFERENCE_KEY) === 'paused'); } catch {}
     setReady(true);
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     const fine = window.matchMedia('(hover: hover) and (pointer: fine)');
@@ -33,26 +34,19 @@ export default function PortfolioEffects() {
       mobile: narrow.matches,
       available: !reduced.matches,
     });
-    const syncPreference = event => {
-      if (event.key === PREFERENCE_KEY || event.key === null) {
-        setPaused(event.newValue === 'paused');
-      }
-    };
     update();
     [reduced, fine, narrow].forEach(query => query.addEventListener('change', update));
     document.addEventListener('visibilitychange', update);
-    window.addEventListener('storage', syncPreference);
     return () => {
       [reduced, fine, narrow].forEach(query => query.removeEventListener('change', update));
       document.removeEventListener('visibilitychange', update);
-      window.removeEventListener('storage', syncPreference);
     };
   }, []);
 
   const toggleEffects = () => {
     const next = !paused;
     setPaused(next);
-    try { localStorage.setItem(PREFERENCE_KEY, next ? 'paused' : 'running'); } catch {}
+    try { sessionStorage.setItem(PREFERENCE_KEY, next ? 'paused' : 'running'); } catch {}
     window.dispatchEvent(new CustomEvent('portfolio-effects-change', { detail: { paused: next } }));
   };
 

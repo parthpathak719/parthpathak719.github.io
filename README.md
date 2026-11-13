@@ -15,7 +15,7 @@ My portfolio presents my projects, technical skills, and internship experience a
 - 🌙 A responsive dark interface with coordinated colour accents and technology icons.
 - 🌊 Smooth scrolling and fade-and-rise animations as content enters view.
 - 💫 An animated light-pillar background and interactive fluid cursor.
-- ⏯️ A persistent Pause/Resume effects control across pages.
+- ⏯️ A Pause/Resume effects control that applies across pages for the current tab session.
 - ♿ Reduced-motion support and keyboard-accessible navigation and disclosures.
 
 ## 🚀 Run locally

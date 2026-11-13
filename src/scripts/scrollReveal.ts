@@ -11,7 +11,7 @@ const animations = new Set<Animation>();
 let observer: IntersectionObserver | undefined;
 let paused = false;
 let initialized = false;
-try { paused = localStorage.getItem(preferenceKey) === 'paused'; } catch {}
+try { paused = sessionStorage.getItem(preferenceKey) === 'paused'; } catch {}
 document.documentElement.setAttribute('data-reveal-initialized', '');
 
 function markRevealed(element: HTMLElement) {
@@ -80,12 +80,6 @@ document.addEventListener('focusin', event => {
 window.addEventListener('portfolio-effects-change', event => {
   paused = (event as CustomEvent<{ paused: boolean }>).detail.paused;
   updateReveal();
-});
-window.addEventListener('storage', event => {
-  if (event.key === preferenceKey || event.key === null) {
-    try { paused = localStorage.getItem(preferenceKey) === 'paused'; } catch {}
-    updateReveal();
-  }
 });
 reducedMotion.addEventListener('change', updateReveal);
 window.addEventListener('portfolio-background-ready', updateReveal);
