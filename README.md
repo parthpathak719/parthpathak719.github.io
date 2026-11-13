@@ -1,6 +1,6 @@
 # ✨ Parth - Portfolio
 
-My personal portfolio brings together the things I build, the skills I work with, and the experience behind them. It offers a look at my interests across web development, AI, cloud systems, and cybersecurity, with space to explore the work in more detail. A clean interface, thoughtful interactions, and a little personality tie it all together.
+My official portfolio brings together the things I build, the skills I work with, and the experience behind them. It offers a look at my interests across web development, AI, cloud systems, and cybersecurity, with space to explore the work in more detail. A clean interface, thoughtful interactions, and a little personality tie it all together.
 
 ## 🧭 Explore
 
