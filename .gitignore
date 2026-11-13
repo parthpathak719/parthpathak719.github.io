@@ -30,8 +30,7 @@ Desktop.ini
 
 # Personal editor settings and workspaces
 .idea/
-.vscode/settings.json
-.vscode/*.local.json
+.vscode/
 *.code-workspace
 
 # Temporary and backup files

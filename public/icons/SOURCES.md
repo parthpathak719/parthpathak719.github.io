@@ -4,7 +4,7 @@ Icons identify the named tools; trademarks belong to their respective owners.
 These assets are served locally rather than fetched from third parties by visitors.
 
 - SQL: https://github.com/vscode-icons/vscode-icons/blob/master/icons/file_type_sql.svg
-  - VSCode Icons license: `THIRD_PARTY_LICENSES/VSCode-Icons.txt` in the repository.
+  - The SQL icon retains its upstream license in its SVG metadata.
 - Blade: user-requested Blade UI Kit logomark, https://github.com/blade-ui-kit/art/blob/HEAD/logomark.svg
 - HCL AppScan favicon: https://cloud.appscan.com/favicon.ico
 - Invicti favicon: linked by https://www.invicti.com/
