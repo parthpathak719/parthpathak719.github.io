@@ -1,19 +1,22 @@
 # Parth - Portfolio
 
-My personal portfolio, bringing together projects, internships, skills, and credentials across web development, AI, cloud, and security.
+My personal portfolio, bringing together the things I build, the skills I work with, and the experience behind them.
 
-[Visit the portfolio](https://parthpathak719.github.io)
+## Explore
+
+- **About:** A personal introduction, interests, and categorized skills.
+- **Projects:** Featured work and a filterable archive with technical details, source code, and live demos where available.
+- **Experience:** Internship summaries with expandable details, certificates, and reports.
+- **Courses & credentials:** Certifications with verification links.
+- **Contact:** Email and social profiles in one place.
 
 ## Features
 
-- Selected projects and a filterable project archive.
-- Internship summaries with expandable details, certificates, and reports.
-- Skill categories with technology icons and verified credential links.
-- A responsive dark interface with scroll reveals, an animated background, and a fluid cursor. Effects can be paused and respect reduced-motion preferences.
-
-## Built with
-
-Astro, React, TypeScript, and CSS.
+- A responsive dark interface with coordinated colour accents and technology icons.
+- Smooth scrolling and fade-and-rise animations as content enters view.
+- An animated light-pillar background and interactive fluid cursor.
+- A persistent Pause/Resume effects control across pages.
+- Reduced-motion support and keyboard-accessible navigation and disclosures.
 
 ## Run locally
 
@@ -24,17 +27,9 @@ npm ci
 npm run dev
 ```
 
-Build and preview the production site:
+To build and preview:
 
 ```sh
 npm run build
 npm run preview
 ```
-
-## Deployment
-
-GitHub Actions builds and deploys the site to GitHub Pages on pushes to `main`.
-
-## Credits
-
-Visual effects from [React Bits](https://github.com/DavidHDev/react-bits), with technology icons from [Iconify](https://iconify.design). Licenses are preserved in [THIRD_PARTY_LICENSES](THIRD_PARTY_LICENSES/).
