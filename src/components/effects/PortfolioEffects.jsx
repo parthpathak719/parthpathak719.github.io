@@ -60,7 +60,7 @@ export default function PortfolioEffects() {
     {ready && !paused && <div className="ambient-backdrop" aria-hidden="true">
       <div className="pillar-wash">
         {mode.active && !paused && <LightPillar
-          topColor="#b184ff" middleColor="#4b85ff" bottomColor="#53dec8" intensity={1.05}
+          topColor="#b789ef" middleColor="#7950c4" bottomColor="#d2a5e9" intensity={1.05}
           rotationSpeed={0.17} pillarWidth={3.2} pillarHeight={0.45}
           pillarRotation={22} glowAmount={0.002} bloom={0.42}
           noiseIntensity={0.12} quality="low" detail={mode.mobile ? 2 : 3}
@@ -71,7 +71,7 @@ export default function PortfolioEffects() {
       </div>
     </div>}
     {ready && mode.cursor && !paused && <SplashCursor
-      colors={['#b184ff', '#5c9dff', '#53dec8']} rainbow={false}
+      colors={['#b789ef', '#9064d5', '#d2a5e9']} rainbow={false}
       intensity={0.48} size={0.82} force={0.8} swirl={1.9} trail={0.58}
       momentum={0.7} shading={0.4} glow={0.16} quality="low"
       clickSplash={true} clickIntensity={0.3} intro={false} zIndex={25}
