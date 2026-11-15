@@ -5,9 +5,9 @@ My portfolio presents my projects, technical skills, and internship experience a
 ## 🧭 Explore
 
 - 👋 **About:** An introduction to my work, interests, and categorized skills.
+- 🎓 **Courses & credentials:** Certifications with verification links.
 - 🛠️ **Projects:** Featured work and a filterable archive with technical details, source code, and live demos where available.
 - 💼 **Experience:** Internship summaries with expandable details, certificates, and reports.
-- 🎓 **Courses & credentials:** Certifications with verification links.
 - 📄 **Resume:** SDE and cybersecurity resumes, available to view as PDFs.
 - 📬 **Contact:** Email and social profiles in one place.
 
