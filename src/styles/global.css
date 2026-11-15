@@ -52,8 +52,8 @@ main { position: relative; z-index: 1; }
 .wordmark span { color: #b187e8; }
 .nav-links { display: flex; gap: 30px; align-items: center; font-size: 14px; }
 .nav-links a { color: #b6afc7; transition: color .2s; padding-block: 10px; }
-.nav-links a:hover, .nav-links a.active { color: #e6d6ff; }
-.nav-contact span { color: #b49ada; margin-left: 5px; }
+.nav-links a:hover, .nav-links a.active { color: #b6afc7; }
+.nav-contact span { color: inherit; margin-left: 5px; }
 .menu-toggle { display: none; }
 
 /* Opening */
