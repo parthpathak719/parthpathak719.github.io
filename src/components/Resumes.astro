@@ -1,0 +1,16 @@
+---
+const resumes = [
+  { title: 'Resume SDE', focus: 'Software development', href: '/resumes/resume-sde.pdf' },
+  { title: 'Resume Cybersecurity', focus: 'Application & network security', href: '/resumes/resume-cybersecurity.pdf' },
+];
+---
+<section class="resume-section wrap section-space" id="resume" aria-labelledby="resume-title">
+  <div class="section-heading"><h2 id="resume-title">Resume</h2></div>
+  <div class="resume-grid">
+    {resumes.map(resume => <a class="resume-card" href={resume.href} target="_blank" rel="noopener noreferrer" aria-label={`View ${resume.title} (PDF, opens in a new tab)`}>
+      <span class="resume-document" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+      <span class="resume-label"><h3>{resume.title}</h3><span>{resume.focus}</span></span>
+      <span class="resume-action">View PDF <span aria-hidden="true">↗</span></span>
+    </a>)}
+  </div>
+</section>

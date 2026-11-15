@@ -3,7 +3,7 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const targets = [...document.querySelectorAll<HTMLElement>([
   '.hero > *',
   '.section-heading', '.about-grid', '.credentials-heading', '.credential-card',
-  '.featured-project', '.more-work', '.experience-row',
+  '.featured-project', '.more-work', '.experience-row', '.resume-card',
   '.contact-section > *', '.project-index > :not(.archive)', '.archive-row',
 ].join(', '))];
 const revealed = new WeakSet<HTMLElement>();
