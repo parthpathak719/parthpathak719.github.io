@@ -46,6 +46,7 @@ const { title = 'Parth - Portfolio', description = 'Portfolio of Parth Pathak. W
     <slot />
     <script>
       import '../scripts/scrollReveal';
+      import '../scripts/smoothScroll';
       const navLinks = document.querySelectorAll<HTMLAnchorElement>('[data-section-link]');
       if ('IntersectionObserver' in window) {
         const sectionObserver = new IntersectionObserver((entries) => {
